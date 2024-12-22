@@ -34,3 +34,47 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+<br/>
+
+# Tech Stack
+
+- Shadcn
+- Next.js 15
+
+<br/>
+
+# Project Information
+
+### Will contain Admin page to add in new projects. 
+
+Data that will be inserted into database:
+
+- Image landing page of project
+- Date of creation and finish date of project
+- Name of project
+- Short Description of project
+- Reason for creation of project
+- Link to project: 
+    - Github link
+    - Public link to live project
+- Tech Stack of Project
+- [optional] Credit of Youtuber for tutorial of the project
+
+### Functions of the project
+
+- Will be able to search for my projects
+- To show experience with different tech stacks
+- About me
+    - Experience and previous work
+    - Tech Stacks used
+    - Contact details and socials
+    - Brief description of me
+
+## Project Pages
+
+- Admin
+- Projects
+- Project
+- About
+- Contact
