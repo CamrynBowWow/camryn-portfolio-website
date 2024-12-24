@@ -62,6 +62,21 @@ Data that will be inserted into database:
 - Tech Stack of Project
 - [optional] Credit of Youtuber for tutorial of the project
 
+#### Table Date Layout
+- name
+- description
+- reason
+- teach stack
+- creation date
+- finish date
+- image
+- github link
+- active link
+- category
+- status
+- created at
+- updated at
+
 ### Functions of the project
 
 - Will be able to search for my projects
