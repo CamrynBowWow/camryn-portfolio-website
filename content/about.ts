@@ -1,15 +1,15 @@
 export const MainContent: AboutContent = {
 	title: 'Camryn Bowden',
 	startingPoint:
-		"A young developer passionate about programming. Always interested in learning something new and growing new skills. I'm enthusiastic about learning new languages and further deepening my understand of the programming.",
+		'A young and passionate developer with a strong enthusiasm for programming. Driven by a desire to learn and grow continually, I am always eager to explore new technologies and deepen my understanding of programming concepts. I thrive on expanding my skill set, mastering new languages, and tackling challenges to elevate my expertise.',
 	experience:
-		"I've been programming for a few years. Learning new stacks and strengthening the knowledge I have learnt. A have year worth of experience in software development. Have required a Bachelors of Science in Information Technology (Software Engineering) and a Higher Certificate in Information Systems (Software Development).",
+		'I have been programming for several years, continuously expanding my knowledge and refining my skills. With a year of professional experience in software development, I am adept at learning new tech stacks and building upon my existing expertise. I hold a Bachelor of Science in Information Technology (Software Engineering) and a Higher Certificate in Information Systems (Software Development), which have provided me with a strong foundation in the field.',
 	passion:
-		'My choice for has stemmed from a passion of gaming and wishing to make games. From this I leaped into programming and falling in love with all the different aspects of programming.',
+		'My passion for gaming initially inspired my journey into programming, fuelled by a desire to create games of my own. This curiosity quickly grew into a deep love for programming, as I discovered and embraced the diverse and fascinating aspects of the field.',
 	bestChoice:
-		'I have these no surrender attitude and knowing any problem can be solved if you just put your mind to it.',
+		"I possess relentless determination and a 'no-surrender' attitude. I firmly believe that any problem can be solved with focus, perseverance, and the right mindset.",
 	excitedReason:
-		'The excitement of new and different programming languages has always interested me and how close but uniquely different they are. Its always enjoyable when learning something new and how the differ from existing programming languages.',
+		'I have always been fascinated by the excitement of exploring new programming languages their similarities, unique nuances, and distinctive features. Learning something new in the programming world is a constant source of joy, especially as I uncover how each language differs from and complements others.',
 	mainImage: '/SadDoggo.png',
 };
 
@@ -67,7 +67,7 @@ export const FrameworksContent: TechStackContent = {
 			image: 'assets/frameworks/blazor.svg',
 		},
 		{
-			name: 'Dotnetcore', // TODO: fix naming
+			name: '.NET Core',
 			image: 'assets/frameworks/dotnetcore.svg',
 		},
 		{
