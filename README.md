@@ -26,6 +26,8 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 - Next.js 15
 - Clerk
 - [Devicon](https://devicon.dev/)
+- date-fns
+- react-dropzone
 
 <br/>
 

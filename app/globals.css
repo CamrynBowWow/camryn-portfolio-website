@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 @layer utilities {
-
 	.about-title {
 		@apply text-2xl sm:text-4xl tracking-wider font-semibold
 	}
@@ -23,6 +22,24 @@
 	.tech-stack-content-container {
 		@apply relative text-sm sm:text-lg flex gap-3 items-center py-2 px-3 sm:px-4 bg-white sm:h-[70px] border border-gray-300 rounded-md shadow-md w-[200px] x-ms:w-[150px] sm:w-[220px] overflow-hidden
 	}
+
+	.form-description-mobile {
+		@apply x-ms:text-[0.8rem] text-[10px]
+	}
+
+	/* ==== File Upload */
+	.file-upload {
+		@apply text-12-regular flex cursor-pointer flex-col items-center justify-center gap-2 rounded-md border border-dashed border-gray-300 p-5;
+	}
+
+	.file-upload_label {
+		@apply flex flex-col justify-center gap-2 text-center;
+	}
+
+	.text-12-regular {
+		@apply text-[12px] leading-[16px] font-normal;
+	}
+	/* ==== File Upload */
 }
 
 @layer base {
