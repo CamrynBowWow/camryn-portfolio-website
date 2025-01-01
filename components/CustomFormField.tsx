@@ -1,5 +1,3 @@
-// Maybe use
-
 import { Control } from 'react-hook-form';
 import {
 	FormControl,
@@ -9,7 +7,6 @@ import {
 	FormLabel,
 	FormMessage,
 } from './ui/form';
-import Image from 'next/image';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { Popover, PopoverContent, PopoverTrigger } from './ui/popover';
