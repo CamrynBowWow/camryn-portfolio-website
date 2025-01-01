@@ -4,27 +4,27 @@
 
 @layer utilities {
 	.about-title {
-		@apply text-2xl sm:text-4xl tracking-wider font-semibold
+		@apply text-2xl sm:text-4xl tracking-wider font-semibold;
 	}
 
 	.about-paragraph {
-		@apply text-sm sm:text-base leading-snug sm:leading-relaxed
+		@apply text-sm sm:text-base leading-snug sm:leading-relaxed;
 	}
 
 	.tech-stack-header {
-		@apply text-lg sm:text-2xl font-semibold tracking-wider w-full border-black border-b-[1px] pb-3
+		@apply text-lg sm:text-2xl font-semibold tracking-wider w-full border-black border-b-[1px] pb-3;
 	}
 
 	.tech-stack-container {
-		@apply flex justify-center x-ms:justify-start flex-wrap gap-4 cursor-default px-2
+		@apply flex justify-center x-ms:justify-start flex-wrap gap-4 cursor-default px-2;
 	}
 
 	.tech-stack-content-container {
-		@apply relative text-sm sm:text-lg flex gap-3 items-center py-2 px-3 sm:px-4 bg-white sm:h-[70px] border border-gray-300 rounded-md shadow-md w-[200px] x-ms:w-[150px] sm:w-[220px] overflow-hidden
+		@apply relative text-sm sm:text-lg flex gap-3 items-center py-2 px-3 sm:px-4 bg-white sm:h-[70px] border border-gray-300 rounded-md shadow-md w-[200px] x-ms:w-[150px] sm:w-[220px] overflow-hidden;
 	}
 
 	.form-description-mobile {
-		@apply x-ms:text-[0.8rem] text-[10px]
+		@apply x-ms:text-[0.8rem] text-[10px];
 	}
 
 	/* ==== File Upload */
@@ -96,8 +96,6 @@
 		--chart-4: 280 65% 60%;
 		--chart-5: 340 75% 55%;
 	}
-
-	
 }
 
 @layer base {
