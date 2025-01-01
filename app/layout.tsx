@@ -3,7 +3,6 @@ import { Poppins } from 'next/font/google';
 import './globals.css';
 import { ClerkProvider } from '@clerk/nextjs';
 import { cn } from '@/lib/utils';
-import Header from '@/components/Header';
 
 const poppins = Poppins({
 	variable: '--font-poppins',
@@ -25,12 +24,8 @@ export default function RootLayout({
 		<ClerkProvider>
 			<html lang='en'>
 				<body
-					className={cn(
-						'flex min-h-screen flex-col antialiased font-poppins py-24',
-						poppins.variable
-					)}
+					className={cn('flex min-h-screen flex-col antialiased font-poppins', poppins.variable)}
 				>
-					<Header />
 					{children}
 				</body>
 			</html>

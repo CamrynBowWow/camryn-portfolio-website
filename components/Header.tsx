@@ -7,7 +7,7 @@ export default function Header() {
 				<ul className='flex items-center gap-6 text-sm text-muted-foreground sm:gap-10'>
 					<li>
 						<NavLink
-							href='/'
+							href='/home'
 							className='p-2 transition-colors text-foreground hover:text-muted-foreground'
 							aria-label='home'
 						>
