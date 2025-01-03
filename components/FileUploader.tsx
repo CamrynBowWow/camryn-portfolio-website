@@ -1,30 +1,33 @@
 'use client';
 
-import { convertFileToUrl } from '@/lib/utils';
+import { convertFileToBase64 } from '@/lib/utils'; // Import the convertFileToBase64 function
 import Image from 'next/image';
 import React, { useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 
 type FileUploaderProps = {
-	files: File[] | undefined;
-	onChange: (files: File[]) => void;
+	files: string | undefined; // Now just a single Base64 string
+	onChange: (file: string) => void; // onChange will receive a single string
 };
 
-// TODO: experiment with File and File[]
-
 const FileUploader = ({ files, onChange }: FileUploaderProps) => {
-	const onDrop = useCallback((acceptedFiles: File[]) => {
-		onChange(acceptedFiles);
-	}, []); // TODO: maybe add onChange as dependency or test later
+	console.log('here2');
+	const onDrop = useCallback(async (acceptedFiles: File[]) => {
+		// Convert the first file to Base64 and update the parent component
+		if (acceptedFiles.length > 0) {
+			const base64File = await convertFileToBase64(acceptedFiles[0]); // Convert the first file to Base64
+			onChange(base64File); // Pass the Base64 string back to the parent component
+		}
+	}, []);
 
 	const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
 
 	return (
 		<div {...getRootProps()} className='file-upload'>
 			<input {...getInputProps()} />
-			{files && files?.length > 0 ? (
+			{files ? (
 				<Image
-					src={convertFileToUrl(files[0])}
+					src={files} // Use the Base64 string as the image source
 					width={500}
 					height={500}
 					alt='uploaded image'

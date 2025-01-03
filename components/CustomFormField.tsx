@@ -49,6 +49,7 @@ export default function CustomFormField(props: CustomProps) {
 				<Popover>
 					<FormItem className={formItemStyling}>
 						<RenderInput field={field} props={props} />
+						<FormMessage className='text-red-400' />
 					</FormItem>
 				</Popover>
 			)}
@@ -63,7 +64,7 @@ export default function CustomFormField(props: CustomProps) {
 
 					<RenderInput field={field} props={props} />
 
-					{/* <FormMessage className='text-red-400' /> //TODO test */}
+					<FormMessage className='text-red-400' />
 
 					{formDescription && (
 						<FormDescription className='form-description-mobile'>{formDescription}</FormDescription>
@@ -81,7 +82,7 @@ function RenderInput({ field, props }: { field: any; props: CustomProps }) {
 		case FormFieldType.INPUT:
 			return (
 				<FormControl>
-					<Input placeholder={placeholder} {...field} />
+					<Input placeholder={placeholder} {...field} value={field.value || ''} />
 				</FormControl>
 			);
 		case FormFieldType.TEXTAREA:
