@@ -7,30 +7,36 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button } from '@/components/ui/button';
-
 import FileUploader from '@/components/FileUploader';
 import Link from 'next/link';
 import { SelectItem } from '@/components/ui/select';
 import { PROJECT_CATEGORY, PROJECT_STATUS } from '@/data/constants';
 import CustomFormField, { FormFieldType } from '@/components/CustomFormField';
 import { addProject } from '@/server/actions/project';
+import { useToast } from '@/hooks/use-toast';
+import { redirect } from 'next/navigation';
 
 export default function ProjectForm() {
+	const { toast } = useToast();
+
 	const form = useForm<z.infer<typeof projectFormSchema>>({
 		resolver: zodResolver(projectFormSchema),
 	});
 
 	async function onSubmit(values: z.infer<typeof projectFormSchema>) {
-		// const action = addProject;
-
-		// console.log(values, 'here');
-
 		const data = await addProject(values);
 
 		if (data?.error) {
 			form.setError('root', {
 				message: 'There was an error Adding the Project',
 			});
+		} else {
+			toast({
+				variant: 'default',
+				title: 'Added Project Successfully!',
+			});
+
+			redirect('/NoNoShouldNotBeOnPage');
 		}
 	}
 

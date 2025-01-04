@@ -1,33 +1,46 @@
 'use client';
 
-import { convertFileToBase64 } from '@/lib/utils'; // Import the convertFileToBase64 function
+import { MAX_FILE_SIZE_MB } from '@/data/constants';
+import { convertFileToBase64 } from '@/lib/utils';
 import Image from 'next/image';
-import React, { useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 
 type FileUploaderProps = {
-	files: string | undefined; // Now just a single Base64 string
-	onChange: (file: string) => void; // onChange will receive a single string
+	files: string | undefined;
+	onChange: (file: string | null) => void;
 };
 
 const FileUploader = ({ files, onChange }: FileUploaderProps) => {
-	console.log('here2');
-	const onDrop = useCallback(async (acceptedFiles: File[]) => {
-		// Convert the first file to Base64 and update the parent component
-		if (acceptedFiles.length > 0) {
-			const base64File = await convertFileToBase64(acceptedFiles[0]); // Convert the first file to Base64
-			onChange(base64File); // Pass the Base64 string back to the parent component
-		}
-	}, []);
+	const [error, setError] = useState<string | null>(null);
+
+	const onDrop = useCallback(
+		async (acceptedFiles: File[]) => {
+			if (acceptedFiles.length === 0) return;
+
+			const file = acceptedFiles[0]; // Only handle one file
+			if (file.size > MAX_FILE_SIZE_MB * 1024 * 1024) {
+				setError('File size must be less than 1MB.');
+				onChange(null);
+				return;
+			}
+
+			setError(null); // Clear previous error
+			const base64File = await convertFileToBase64(file); // Convert the file to Base64
+			onChange(base64File); // Pass the Base64 string to the parent component
+		},
+		[onChange]
+	);
 
 	const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
 
 	return (
 		<div {...getRootProps()} className='file-upload'>
 			<input {...getInputProps()} />
+			{error && <p className='text-red-500 text-sm'>{error}</p>}
 			{files ? (
 				<Image
-					src={files} // Use the Base64 string as the image source
+					src={files}
 					width={500}
 					height={500}
 					alt='uploaded image'

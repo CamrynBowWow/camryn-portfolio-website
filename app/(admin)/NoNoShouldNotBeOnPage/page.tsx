@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button';
 import { UserButton } from '@clerk/nextjs';
 import { auth } from '@clerk/nextjs/server';
 import { currentUser } from '@clerk/nextjs/server';
+
 import Link from 'next/link';
 
 export default async function Page() {
