@@ -5,7 +5,7 @@ export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs));
 }
 
-export const convertFileToBase64 = (file: File): Promise<string> => {
+export function convertFileToBase64(file: File): Promise<string> {
 	return new Promise((resolve, reject) => {
 		const reader = new FileReader();
 
@@ -17,4 +17,9 @@ export const convertFileToBase64 = (file: File): Promise<string> => {
 
 		reader.readAsDataURL(file);
 	});
-};
+}
+
+export function makeIOSLocalDateString() {
+	const timezoneOffset = new Date().getTimezoneOffset();
+	return new Date(new Date().getTime() - timezoneOffset * 60 * 1000);
+}

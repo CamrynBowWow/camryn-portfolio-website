@@ -2,6 +2,7 @@
 
 import { db } from '@/drizzle/db';
 import { CodeProjectTable } from '@/drizzle/schema';
+import { makeIOSLocalDateString } from '@/lib/utils';
 import { projectFormSchema } from '@/schema/project';
 import { z } from 'zod';
 
@@ -26,5 +27,7 @@ export async function addProject(
 		activeLink: data.activeLink,
 		category: data.category,
 		status: data.status,
+		createdAt: makeIOSLocalDateString(),
+		updatedAt: makeIOSLocalDateString(),
 	});
 }

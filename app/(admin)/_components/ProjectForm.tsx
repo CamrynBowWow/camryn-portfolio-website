@@ -35,7 +35,6 @@ export default function ProjectForm() {
 				variant: 'default',
 				title: 'Added Project Successfully!',
 			});
-
 			redirect('/NoNoShouldNotBeOnPage');
 		}
 	}

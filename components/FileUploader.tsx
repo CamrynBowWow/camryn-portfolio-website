@@ -8,7 +8,7 @@ import { useDropzone } from 'react-dropzone';
 
 type FileUploaderProps = {
 	files: string | undefined;
-	onChange: (file: string | null) => void;
+	onChange: (file: string) => void;
 };
 
 const FileUploader = ({ files, onChange }: FileUploaderProps) => {
@@ -18,16 +18,17 @@ const FileUploader = ({ files, onChange }: FileUploaderProps) => {
 		async (acceptedFiles: File[]) => {
 			if (acceptedFiles.length === 0) return;
 
-			const file = acceptedFiles[0]; // Only handle one file
+			const file = acceptedFiles[0];
+
 			if (file.size > MAX_FILE_SIZE_MB * 1024 * 1024) {
 				setError('File size must be less than 1MB.');
-				onChange(null);
+				onChange('');
 				return;
 			}
 
-			setError(null); // Clear previous error
-			const base64File = await convertFileToBase64(file); // Convert the file to Base64
-			onChange(base64File); // Pass the Base64 string to the parent component
+			setError(null);
+			const base64File = await convertFileToBase64(file);
+			onChange(base64File);
 		},
 		[onChange]
 	);
@@ -53,7 +54,7 @@ const FileUploader = ({ files, onChange }: FileUploaderProps) => {
 						<p className='text-14-regular'>
 							<span className='text-green-500'>Click to upload</span> or drag and drop
 						</p>
-						<p>SVG, PNG, JPG or Gif (max 800x400)</p>
+						<p>SVG, PNG, JPG or Gif</p>
 					</div>
 				</>
 			)}
