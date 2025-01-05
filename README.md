@@ -80,3 +80,20 @@ Data that will be inserted into database:
 - Project
 - About
 - Home
+
+<br/>
+
+### Important Neon Database Information
+
+When generating for database make sure previous enums are deleted in database or make it so they aren't created again before doing migration.
+
+```bash
+CREATE TYPE "public"."projectCategory" AS ENUM('tutorial', 'personal');--> statement-breakpoint
+```
+
+- Go to **SQL Editor**
+- Then type following code below to delete enum from Neon database
+
+```bash
+DROP TYPE "public"."projectStatus"
+```

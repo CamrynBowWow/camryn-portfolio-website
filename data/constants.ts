@@ -7,3 +7,5 @@ export const PROJECT_STATUS = [
 	'unavailable',
 	'enhancements',
 ] as const;
+
+export const MAX_FILE_SIZE_MB = 1;

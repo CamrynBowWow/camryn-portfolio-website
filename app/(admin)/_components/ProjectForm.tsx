@@ -7,21 +7,41 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button } from '@/components/ui/button';
-
 import FileUploader from '@/components/FileUploader';
 import Link from 'next/link';
 import { SelectItem } from '@/components/ui/select';
 import { PROJECT_CATEGORY, PROJECT_STATUS } from '@/data/constants';
 import CustomFormField, { FormFieldType } from '@/components/CustomFormField';
+import { addProject } from '@/server/actions/project';
+import { useToast } from '@/hooks/use-toast';
+import { redirect } from 'next/navigation';
 
 export default function ProjectForm() {
+	const { toast } = useToast();
+
 	const form = useForm<z.infer<typeof projectFormSchema>>({
 		resolver: zodResolver(projectFormSchema),
 	});
 
+	async function onSubmit(values: z.infer<typeof projectFormSchema>) {
+		const data = await addProject(values);
+
+		if (data?.error) {
+			form.setError('root', {
+				message: 'There was an error Adding the Project',
+			});
+		} else {
+			toast({
+				variant: 'default',
+				title: 'Added Project Successfully!',
+			});
+			redirect('/NoNoShouldNotBeOnPage');
+		}
+	}
+
 	return (
 		<Form {...form}>
-			<form className='flex flex-col gap-8 sm:gap-6'>
+			<form onSubmit={form.handleSubmit(onSubmit)} className='flex flex-col gap-8 sm:gap-6'>
 				<CustomFormField
 					fieldType={FormFieldType.INPUT}
 					control={form.control}
@@ -40,14 +60,14 @@ export default function ProjectForm() {
 					<CustomFormField
 						fieldType={FormFieldType.TEXTAREA}
 						control={form.control}
-						name='techStack'
+						name='reason'
 						label='Project Reason'
 						formItemStyling='flex-1'
 					/>
 					<CustomFormField
 						fieldType={FormFieldType.TEXTAREA}
 						control={form.control}
-						name='reason'
+						name='techStack'
 						label='Tech Stack Used'
 						formItemStyling='flex-1'
 						formDescription={
@@ -140,11 +160,16 @@ export default function ProjectForm() {
 				</div>
 
 				<div className='flex justify-end gap-5'>
-					<Button variant='outline' className='duration-700 hover:bg-gray-300' asChild>
+					<Button
+						variant='outline'
+						className='duration-700 hover:bg-gray-300'
+						disabled={form.formState.isSubmitting}
+						asChild
+					>
 						<Link href='/NoNoShouldNotBeOnPage'>Cancel</Link>
 					</Button>
-					<Button variant='success' asChild>
-						<Link href='/NoNoShouldNotBeOnPage'>Add</Link>
+					<Button variant='success' disabled={form.formState.isSubmitting} type='submit'>
+						{form.formState.isSubmitting ? 'Submitting...' : 'Add'}
 					</Button>
 				</div>
 			</form>
