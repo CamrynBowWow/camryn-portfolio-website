@@ -5,6 +5,7 @@ import { formatDateMedium } from '@/lib/formatters';
 import { ProjectContent } from '@/types';
 import { ColumnDef } from '@tanstack/react-table';
 import { Edit, Trash2 } from 'lucide-react';
+import { ArrowUpDown } from 'lucide-react';
 import Link from 'next/link';
 
 export const columns: ColumnDef<ProjectContent>[] = [
@@ -30,11 +31,24 @@ export const columns: ColumnDef<ProjectContent>[] = [
 	},
 	{
 		accessorKey: 'category',
-		header: 'Category',
+		header: ({ column }) => {
+			return (
+				<Button
+					variant='ghost'
+					className='hover:bg-sky-100/50 duration-300 text-xs md:text-sm [&_svg]:size-3 md:[&_svg]:size-4'
+					onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
+				>
+					Category
+					<ArrowUpDown className='ml-2 h-4 w-4' />
+				</Button>
+			);
+		},
+		cell: ({ row }) => <p className='capitalize'>{row.getValue('category')}</p>,
 	},
 	{
 		accessorKey: 'status',
 		header: 'Status',
+		cell: ({ row }) => <p className='capitalize'>{row.getValue('status')}</p>,
 	},
 	{
 		accessorKey: 'createdAt',
