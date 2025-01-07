@@ -63,7 +63,7 @@ export const columns: ColumnDef<ProjectContent>[] = [
 	{
 		accessorKey: 'deleteEdit',
 		header: '',
-		cell: ({ row }) => (
+		cell: ({}) => (
 			<div className='flex gap-3 justify-center'>
 				<Button size='sm' variant='destructive'>
 					<Trash2 />

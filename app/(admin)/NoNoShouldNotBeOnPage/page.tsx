@@ -4,8 +4,8 @@ import { auth } from '@clerk/nextjs/server';
 import { currentUser } from '@clerk/nextjs/server';
 import Link from 'next/link';
 import { db } from '@/drizzle/db';
-import { columns } from '@/components/columns';
-import { DataTable } from '@/app/(admin)/_components/data-table';
+import { columns } from '@/app/(admin)/_components/columns';
+import { DataTable } from '../_components/data-table';
 
 export default async function Page() {
 	const { userId, redirectToSignIn } = await auth();
