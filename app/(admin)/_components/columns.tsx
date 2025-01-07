@@ -4,11 +4,15 @@ import { Button } from '@/components/ui/button';
 import { formatDateMedium } from '@/lib/formatters';
 import { ProjectContent } from '@/types';
 import { ColumnDef } from '@tanstack/react-table';
-import { Edit, Trash2 } from 'lucide-react';
+import { Edit } from 'lucide-react';
 import { ArrowUpDown } from 'lucide-react';
 import Link from 'next/link';
+import DeleteDialog from './DeleteDialog';
 
 export const columns: ColumnDef<ProjectContent>[] = [
+	{
+		accessorKey: 'id',
+	},
 	{
 		accessorKey: 'name',
 		header: 'Project Name',
@@ -63,11 +67,9 @@ export const columns: ColumnDef<ProjectContent>[] = [
 	{
 		accessorKey: 'deleteEdit',
 		header: '',
-		cell: ({}) => (
+		cell: ({ row }) => (
 			<div className='flex gap-3 justify-center'>
-				<Button size='sm' variant='destructive'>
-					<Trash2 />
-				</Button>
+				<DeleteDialog id={row.getValue('id')} />
 				<Button size='sm' variant='secondary' asChild>
 					<Link href='/NoNoShouldNotBeOnPage/edit'>
 						<Edit />

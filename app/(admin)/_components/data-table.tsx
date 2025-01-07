@@ -6,6 +6,7 @@ import {
 	flexRender,
 	getCoreRowModel,
 	SortingState,
+	VisibilityState,
 	getPaginationRowModel,
 	getSortedRowModel,
 	useReactTable,
@@ -23,6 +24,7 @@ import {
 } from '@/components/ui/table';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { useState } from 'react';
 
 interface DataTableProps<ProjectContent, TValue> {
 	columns: ColumnDef<ProjectContent, TValue>[];
@@ -33,8 +35,11 @@ export function DataTable<ProjectContent, TValue>({
 	columns,
 	data,
 }: DataTableProps<ProjectContent, TValue>) {
-	const [sorting, setSorting] = React.useState<SortingState>([]);
-	const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([]);
+	const [sorting, setSorting] = useState<SortingState>([]);
+	const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
+	const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({
+		id: false,
+	});
 
 	const table = useReactTable({
 		data,
@@ -45,9 +50,11 @@ export function DataTable<ProjectContent, TValue>({
 		getSortedRowModel: getSortedRowModel(),
 		onColumnFiltersChange: setColumnFilters,
 		getFilteredRowModel: getFilteredRowModel(),
+		onColumnVisibilityChange: setColumnVisibility,
 		state: {
 			sorting,
 			columnFilters,
+			columnVisibility,
 		},
 	});
 
