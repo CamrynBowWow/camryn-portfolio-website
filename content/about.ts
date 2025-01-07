@@ -1,3 +1,5 @@
+import { AboutContent, TechStackContent } from '@/types';
+
 export const MainContent: AboutContent = {
 	title: 'Camryn Bowden',
 	startingPoint:

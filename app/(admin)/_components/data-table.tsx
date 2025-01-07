@@ -21,7 +21,6 @@ import {
 	TableHeader,
 	TableRow,
 } from '@/components/ui/table';
-import { ProjectContent } from '@/types';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 

@@ -1,6 +1,6 @@
 import { PROJECT_CATEGORY, PROJECT_STATUS } from '@/data/constants';
 
-declare type AboutContent = {
+declare interface AboutContent {
 	title: string;
 	startingPoint: string;
 	experience: string;
@@ -8,15 +8,15 @@ declare type AboutContent = {
 	bestChoice: string;
 	excitedReason: string;
 	mainImage: string;
-};
+}
 
-declare type TechStackContent = {
+declare interface TechStackContent {
 	title: string;
 	content: {
 		name: string;
 		image: RefAttributes<SVGSVGElement>;
 	}[];
-};
+}
 
 declare type ProjectContent = {
 	id: string;
