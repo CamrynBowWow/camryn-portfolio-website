@@ -4,7 +4,6 @@ import { auth } from '@clerk/nextjs/server';
 import { currentUser } from '@clerk/nextjs/server';
 import Link from 'next/link';
 import { db } from '@/drizzle/db';
-import ProjectsPage from './projects/page';
 import { DataTable } from '../_components/data-table';
 import { columns } from '../_components/columns';
 
