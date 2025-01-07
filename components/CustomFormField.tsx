@@ -1,3 +1,5 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
+
 import { Control } from 'react-hook-form';
 import {
 	FormControl,
@@ -14,7 +16,7 @@ import { Button } from './ui/button';
 import { CalendarIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Calendar } from './ui/calendar';
-import { formatDate } from '@/lib/formatters';
+import { formatDateLong } from '@/lib/formatters';
 import { Select, SelectContent, SelectTrigger, SelectValue } from './ui/select';
 
 export enum FormFieldType {
@@ -104,7 +106,7 @@ function RenderInput({ field, props }: { field: any; props: CustomProps }) {
 									!field.value && 'text-muted-foreground'
 								)}
 							>
-								{field.value ? formatDate(field.value) : <span>Pick Date</span>}
+								{field.value ? formatDateLong(field.value) : <span>Pick Date</span>}
 
 								<CalendarIcon />
 							</Button>

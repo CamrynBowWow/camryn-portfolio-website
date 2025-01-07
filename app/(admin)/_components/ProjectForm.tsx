@@ -1,5 +1,7 @@
 'use client';
 
+/* eslint-disable  @typescript-eslint/no-explicit-any */
+
 import { Form, FormControl } from '@/components/ui/form';
 import { projectFormSchema } from '@/schema/project';
 import React from 'react';
@@ -72,7 +74,7 @@ export default function ProjectForm() {
 						formItemStyling='flex-1'
 						formDescription={
 							<>
-								Separate each tech with <span className='font-bold'>' , '</span> / comma
+								Separate each tech with <span className='font-bold'>&#39; , &#39;</span> / comma
 							</>
 						}
 					/>

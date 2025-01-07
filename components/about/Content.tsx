@@ -1,5 +1,6 @@
 'use client';
 
+import { AboutContent } from '@/types';
 import Image from 'next/image';
 
 type ContentProps = {
