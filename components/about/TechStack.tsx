@@ -1,3 +1,4 @@
+import { TechStackContent } from '@/types';
 import Image from 'next/image';
 
 type TechStackProps = {

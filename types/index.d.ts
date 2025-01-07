@@ -10,13 +10,13 @@ declare interface AboutContent {
 	mainImage: string;
 }
 
-declare interface TechStackContent {
+declare type TechStackContent = {
 	title: string;
 	content: {
 		name: string;
 		image: RefAttributes<SVGSVGElement>;
 	}[];
-}
+};
 
 declare type ProjectContent = {
 	id: string;
