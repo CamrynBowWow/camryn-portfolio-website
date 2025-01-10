@@ -5,7 +5,7 @@ export default async function ProjectsPage() {
 	const projects = await db.query.CodeProjectTable.findMany();
 
 	return (
-		<section className='container'>
+		<section className='container w-full'>
 			<Container projects={projects} />
 		</section>
 	);
