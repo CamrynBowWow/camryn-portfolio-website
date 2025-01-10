@@ -1,4 +1,5 @@
 const longDateFormatter = new Intl.DateTimeFormat(undefined, { dateStyle: 'long' });
+
 const mediumDateFormatter = new Intl.DateTimeFormat(undefined, { dateStyle: 'medium' });
 
 export function formatDateLong(date: Date) {

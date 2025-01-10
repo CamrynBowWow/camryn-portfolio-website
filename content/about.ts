@@ -236,5 +236,9 @@ export const OtherContent: TechStackContent = {
 			name: 'WordPress',
 			image: 'assets/wordpress.svg',
 		},
+		{
+			name: 'Cloudflare',
+			image: 'assets/cloudflare.svg',
+		},
 	],
 };

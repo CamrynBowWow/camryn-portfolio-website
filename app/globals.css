@@ -40,6 +40,33 @@
 		@apply text-[12px] leading-[16px] font-normal;
 	}
 	/* ==== File Upload */
+
+	/* ==== Image Overlay */
+	.image-overlay-container {
+		@apply absolute flex flex-col justify-between h-full inset-x-0 top-0 translate-y-2 px-6 py-5 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100;
+	}
+
+	.image-overlay-title {
+		@apply capitalize line-clamp-1 text-2xl font-semibold;
+	}
+
+	.image-overlay-date-container {
+		@apply flex gap-2 text-muted-foreground text-sm;
+	}
+	/* ==== Image Overlay */
+
+	.projects-image {
+		@apply rounded object-cover object-center transition-transform duration-500 group-hover:scale-105;
+	}
+
+	.projects-list-child-container {
+		@apply relative w-[290px] x-ms:w-[370px] sm:w-[450px] xl:w-full h-52 x-ms:h-56 sm:h-64 lg:h-72;
+	}
+
+	
+	.projects-background-overlay {
+		@apply absolute inset-[5px] rounded bg-background/85 opacity-0 transition-opacity duration-500 group-hover:opacity-100;
+	}
 }
 
 @layer base {
