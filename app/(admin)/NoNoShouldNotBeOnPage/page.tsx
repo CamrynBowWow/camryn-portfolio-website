@@ -7,6 +7,8 @@ import { db } from '@/drizzle/db';
 import { DataTable } from '../_components/data-table';
 import { columns } from '../_components/columns';
 
+export const revalidate = 0;
+
 export default async function Page() {
 	const { userId, redirectToSignIn } = await auth();
 

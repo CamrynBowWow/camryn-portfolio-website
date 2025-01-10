@@ -3,6 +3,8 @@ import { db } from '@/drizzle/db';
 import { CodeProjectTable } from '@/drizzle/schema';
 import { asc } from 'drizzle-orm';
 
+export const revalidate = 0;
+
 export default async function ProjectsPage() {
 	const projects = await db.query.CodeProjectTable.findMany({
 		orderBy: [asc(CodeProjectTable.finishDate)],
