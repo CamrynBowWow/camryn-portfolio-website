@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @layer utilities {
+	/* ==== About Content*/
 	.about-title {
 		@apply text-2xl sm:text-4xl tracking-wider font-semibold;
 	}
@@ -11,6 +12,12 @@
 		@apply text-sm sm:text-base leading-snug sm:leading-relaxed;
 	}
 
+	.about-profile-link {
+		@apply grayscale opacity-50 hover:opacity-75 hover:scale-105 duration-500 relative h-[28px] w-[28px] sm:h-[34px] sm:w-[34px];
+	}
+	/* ==== About Content*/
+
+	/* ==== About TechStack*/
 	.tech-stack-header {
 		@apply text-lg sm:text-2xl font-semibold tracking-wider w-full border-black border-b-[1px] pb-3;
 	}
@@ -22,6 +29,7 @@
 	.tech-stack-content-container {
 		@apply relative text-sm sm:text-lg flex gap-3 items-center py-2 px-3 sm:px-4 bg-white sm:h-[70px] border border-gray-300 rounded-md shadow-md w-[200px] x-ms:w-[150px] sm:w-[220px] overflow-hidden;
 	}
+	/* ==== About TechStack*/
 
 	.form-description-mobile {
 		@apply x-ms:text-[0.8rem] text-[10px];
@@ -63,7 +71,6 @@
 		@apply relative w-[290px] x-ms:w-[370px] sm:w-[450px] xl:w-full h-52 x-ms:h-56 sm:h-64 lg:h-72;
 	}
 
-	
 	.projects-background-overlay {
 		@apply absolute inset-[5px] rounded bg-background/85 opacity-0 transition-opacity duration-500 group-hover:opacity-100;
 	}

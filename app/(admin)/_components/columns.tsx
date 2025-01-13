@@ -22,7 +22,12 @@ export const columns: ColumnDef<ProjectContent>[] = [
 		header: 'Github Link',
 		cell: ({ row }) =>
 			row.getValue('githubLink') && (
-				<Link href={row.getValue('githubLink')}>{row.getValue('name')}</Link>
+				<Link
+					className='underline-offset-[5px] underline text-sky-400 hover:text-purple-500 duration-300'
+					href={row.getValue('githubLink')}
+				>
+					{row.getValue('name')}
+				</Link>
 			),
 	},
 	{
@@ -30,7 +35,12 @@ export const columns: ColumnDef<ProjectContent>[] = [
 		header: 'Link To Live Project',
 		cell: ({ row }) =>
 			row.getValue('githubLink') && (
-				<Link href={row.getValue('activeLink')}>Live Project Link</Link>
+				<Link
+					className='underline-offset-[5px] underline text-sky-400 hover:text-purple-500 duration-300'
+					href={row.getValue('activeLink')}
+				>
+					Live Project Link
+				</Link>
 			),
 	},
 	{

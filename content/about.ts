@@ -242,3 +242,16 @@ export const OtherContent: TechStackContent = {
 		},
 	],
 };
+
+export const profileContent: { site: string; link: string; image: string }[] = [
+	{
+		site: 'Github',
+		link: 'https://github.com/CamrynBowWow',
+		image: 'assets/github.svg',
+	},
+	{
+		site: 'Linkedin',
+		link: 'https://www.linkedin.com/in/camryn-b-a38a9233b/',
+		image: 'assets/linkedin.svg',
+	},
+];
