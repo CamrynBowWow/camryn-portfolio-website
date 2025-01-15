@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 @layer utilities {
+	.default-paragraph {
+		@apply text-sm sm:text-base leading-snug sm:leading-relaxed max-w-screen-lg text-balance;
+	}
+
 	/* ==== About Content*/
 	.about-title {
 		@apply text-2xl sm:text-4xl tracking-wider font-semibold;
-	}
-
-	.about-paragraph {
-		@apply text-sm sm:text-base leading-snug sm:leading-relaxed;
 	}
 
 	.about-profile-link {
@@ -62,6 +62,24 @@
 		@apply flex gap-2 text-muted-foreground text-sm;
 	}
 	/* ==== Image Overlay */
+
+	/* ==== Project Footer */
+
+	.project-footer-link {
+		@apply hover:text-black/50 duration-700;
+	}
+	/* ==== Project Footer */
+
+	/* ==== Project Body */
+
+	.project-body-child-container {
+		@apply flex flex-col gap-2;
+	}
+
+	.project-body-header {
+		@apply font-semibold text-xl sm:text-2xl underline-offset-2 underline;
+	}
+	/* ==== Project Body */
 
 	.projects-image {
 		@apply rounded object-cover object-center transition-transform duration-500 group-hover:scale-105;

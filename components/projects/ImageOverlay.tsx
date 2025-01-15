@@ -1,4 +1,5 @@
 import { formatDateMedium } from '@/lib/formatters';
+import StatusCircle from './StatusCircle';
 
 type ImageOverlayProps = {
 	name: string;
@@ -23,7 +24,10 @@ export default function ImageOverlay({
 				<div className='flex flex-col'>
 					<p className='capitalize font-medium'>{category} Project</p>
 
-					<p className='capitalize text-sm'>{status}</p>
+					<div className='flex gap-[5px] items-center'>
+						<StatusCircle status={status} className='h-[9px] w-[9px]' />
+						<p className='capitalize text-sm'>{status}</p>
+					</div>
 				</div>
 
 				<div className='image-overlay-date-container'>
