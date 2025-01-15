@@ -14,11 +14,11 @@ export default function Content({ main }: ContentProps) {
 		<div className='flex flex-col sm:flex-row gap-10 w-full'>
 			<div className='basis-[60%] flex flex-col gap-2'>
 				<h1 className='about-title'>{main.title}</h1>
-				<p className='about-paragraph'>{main.startingPoint}</p>
-				<p className='about-paragraph'>{main.experience}</p>
-				<p className='about-paragraph'>{main.passion}</p>
-				<p className='about-paragraph'>{main.bestChoice}</p>
-				<p className='about-paragraph'>{main.excitedReason}</p>
+				<p className='default-paragraph'>{main.startingPoint}</p>
+				<p className='default-paragraph'>{main.experience}</p>
+				<p className='default-paragraph'>{main.passion}</p>
+				<p className='default-paragraph'>{main.bestChoice}</p>
+				<p className='default-paragraph'>{main.excitedReason}</p>
 			</div>
 
 			<div className='sm:basis-[40%] h-[300px] sm:h-auto justify-center flex flex-col gap-3 sm:gap-0'>

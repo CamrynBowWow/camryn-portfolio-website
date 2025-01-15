@@ -28,6 +28,7 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 - [Devicon](https://devicon.dev/)
 - date-fns
 - react-dropzone
+- html-react-parser
 
 <br/>
 

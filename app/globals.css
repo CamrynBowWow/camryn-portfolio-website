@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 @layer utilities {
+	.default-paragraph {
+		@apply text-sm sm:text-base leading-snug sm:leading-relaxed max-w-screen-lg text-balance;
+	}
+
 	/* ==== About Content*/
 	.about-title {
 		@apply text-2xl sm:text-4xl tracking-wider font-semibold;
-	}
-
-	.about-paragraph {
-		@apply text-sm sm:text-base leading-snug sm:leading-relaxed;
 	}
 
 	.about-profile-link {

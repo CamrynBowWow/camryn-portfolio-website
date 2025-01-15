@@ -9,3 +9,7 @@ export function formatDateLong(date: Date) {
 export function formatDateMedium(date: Date) {
 	return mediumDateFormatter.format(date);
 }
+
+export function formatText(text: string) {
+	return text.replace(/[-_ ]/g, ' ');
+}
