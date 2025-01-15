@@ -63,6 +63,24 @@
 	}
 	/* ==== Image Overlay */
 
+	/* ==== Project Footer */
+
+	.project-footer-link {
+		@apply hover:text-black/50 duration-700;
+	}
+	/* ==== Project Footer */
+
+	/* ==== Project Body */
+
+	.project-body-child-container {
+		@apply flex flex-col gap-2;
+	}
+
+	.project-body-header {
+		@apply font-semibold text-xl sm:text-2xl underline-offset-2 underline;
+	}
+	/* ==== Project Body */
+
 	.projects-image {
 		@apply rounded object-cover object-center transition-transform duration-500 group-hover:scale-105;
 	}
