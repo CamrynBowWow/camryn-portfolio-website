@@ -58,7 +58,7 @@ export const LanguagesContent: TechStackContent = {
 };
 
 export const FrameworksContent: TechStackContent = {
-	title: 'Framework',
+	title: 'Frameworks',
 	content: [
 		{
 			name: 'Angular',
@@ -190,7 +190,7 @@ export const OrmsContent: TechStackContent = {
 };
 
 export const OtherContent: TechStackContent = {
-	title: 'Other',
+	title: 'Others',
 	content: [
 		{
 			name: 'Docker',

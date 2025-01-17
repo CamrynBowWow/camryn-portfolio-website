@@ -19,6 +19,7 @@ export default {
 		extend: {
 			screens: {
 				'x-ms': '380px',
+				'1-xl': '1400px',
 			},
 			fontFamily: {
 				poppins: ['var(--font-poppins)'],

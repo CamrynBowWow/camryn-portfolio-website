@@ -1,9 +1,8 @@
 'use client';
 
-import { profileContent } from '@/content/about';
 import { AboutContent } from '@/types';
 import Image from 'next/image';
-import Link from 'next/link';
+import ProfileLinks from './ProfileLinks';
 
 type ContentProps = {
 	main: AboutContent;
@@ -32,14 +31,7 @@ export default function Content({ main }: ContentProps) {
 						className='grayscale-[30%]'
 					/>
 				</div>
-
-				<div className='basis-[10%] flex items-center justify-start gap-3 sm:gap-8'>
-					{profileContent.map((profile) => (
-						<Link className='about-profile-link' key={profile.site} href={profile.link}>
-							<Image src={profile.image} alt={profile.site} fill />
-						</Link>
-					))}
-				</div>
+				<ProfileLinks />
 			</div>
 		</div>
 	);
