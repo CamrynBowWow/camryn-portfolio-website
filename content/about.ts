@@ -240,6 +240,14 @@ export const OtherContent: TechStackContent = {
 			name: 'Cloudflare',
 			image: 'assets/cloudflare.svg',
 		},
+		{
+			name: 'Sentry',
+			image: 'assets/sentry.svg',
+		},
+		{
+			name: 'Expo',
+			image: 'assets/expo.svg',
+		},
 	],
 };
 

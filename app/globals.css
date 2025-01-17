@@ -7,6 +7,10 @@
 		@apply text-sm sm:text-base leading-snug sm:leading-relaxed max-w-screen-lg text-balance;
 	}
 
+	.transition-1000 {
+		@apply transition-all duration-1000;
+	}
+
 	/* ==== About Content*/
 	.about-title {
 		@apply text-2xl sm:text-4xl tracking-wider font-semibold;
