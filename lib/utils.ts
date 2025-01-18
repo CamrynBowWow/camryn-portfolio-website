@@ -20,9 +20,12 @@ export function convertFileToBase64(file: File): Promise<string> {
 	});
 }
 
+// Needs fixing when I move to another country
 export function makeIOSLocalTimeStamp() {
-	const timezoneOffset = new Date().getTimezoneOffset();
-	return new Date(new Date().getTime() - timezoneOffset * 60 * 1000);
+	// Africa/Johannesburg is UTC+2, so the offset in minutes is 2 * 60
+	const johannesburgOffset = 2 * 60; // UTC+2 in minutes
+
+	return new Date(new Date().getTime() + johannesburgOffset * 60 * 1000);
 }
 
 export function makeIOSLocalDateString(date: Date | undefined) {
