@@ -81,7 +81,7 @@ export const columns: ColumnDef<ProjectContent>[] = [
 			<div className='flex gap-3 justify-center'>
 				<DeleteDialog id={row.getValue('id')} />
 				<Button size='sm' variant='secondary' asChild>
-					<Link href='/NoNoShouldNotBeOnPage/edit'>
+					<Link href={`/NoNoShouldNotBeOnPage/${row.getValue('id')}/edit`}>
 						<Edit />
 					</Link>
 				</Button>
