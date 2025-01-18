@@ -2,7 +2,7 @@
 
 import { db } from '@/drizzle/db';
 import { CodeProjectTable } from '@/drizzle/schema';
-import { makeIOSLocalDateString } from '@/lib/utils';
+import { makeIOSLocalDateString, makeIOSLocalTimeStamp } from '@/lib/utils';
 import { projectFormSchema } from '@/schema/project';
 import { eq } from 'drizzle-orm';
 import { z } from 'zod';
@@ -21,15 +21,15 @@ export async function addProject(
 		description: data.description,
 		reason: data.reason,
 		techStack: data.techStack,
-		creationDate: data.creationDate.toLocaleDateString(),
-		finishDate: data.finishDate?.toLocaleDateString(),
+		creationDate: makeIOSLocalDateString(data.creationDate),
+		finishDate: makeIOSLocalDateString(data.finishDate),
 		image: data.image,
 		githubLink: data.githubLink,
 		activeLink: data.activeLink,
 		category: data.category,
 		status: data.status,
-		createdAt: makeIOSLocalDateString(),
-		updatedAt: makeIOSLocalDateString(),
+		createdAt: makeIOSLocalTimeStamp(),
+		updatedAt: makeIOSLocalTimeStamp(),
 	});
 }
 
@@ -57,7 +57,7 @@ export async function updateProject(
 			activeLink: data.activeLink,
 			category: data.category,
 			status: data.status,
-			updatedAt: makeIOSLocalDateString(),
+			updatedAt: makeIOSLocalTimeStamp(),
 		})
 		.where(eq(CodeProjectTable.id, id));
 
