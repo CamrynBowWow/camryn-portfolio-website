@@ -14,28 +14,52 @@ import Link from 'next/link';
 import { SelectItem } from '@/components/ui/select';
 import { PROJECT_CATEGORY, PROJECT_STATUS } from '@/data/constants';
 import CustomFormField, { FormFieldType } from '@/components/CustomFormField';
-import { addProject } from '@/server/actions/project';
+import { addProject, updateProject } from '@/server/actions/project';
 import { useToast } from '@/hooks/use-toast';
 import { redirect } from 'next/navigation';
+import { ProjectContent } from '@/types';
 
-export default function ProjectForm() {
+type ProjectFormProps = {
+	projectData?: ProjectContent;
+};
+
+export default function ProjectForm({ projectData }: ProjectFormProps) {
 	const { toast } = useToast();
 
 	const form = useForm<z.infer<typeof projectFormSchema>>({
 		resolver: zodResolver(projectFormSchema),
+		defaultValues: {
+			name: projectData?.name ?? '',
+			description: projectData?.description ?? '',
+			reason: projectData?.reason ?? '',
+			techStack: projectData?.techStack ?? '',
+			creationDate: projectData?.creationDate ? new Date(projectData.creationDate) : new Date(),
+			finishDate: projectData?.finishDate ? new Date(projectData.finishDate) : new Date(),
+			image: projectData?.image ?? '',
+			githubLink: projectData?.githubLink ?? '',
+			activeLink: projectData?.activeLink ?? '',
+			category: projectData?.category ?? PROJECT_CATEGORY[0],
+			status: projectData?.status ?? PROJECT_STATUS[0],
+		},
 	});
 
 	async function onSubmit(values: z.infer<typeof projectFormSchema>) {
-		const data = await addProject(values);
+		const action = projectData == null ? addProject : updateProject.bind(null, projectData.id);
+
+		const data = await action(values);
 
 		if (data?.error) {
 			form.setError('root', {
-				message: 'There was an error Adding the Project',
+				message:
+					projectData == null
+						? 'There was an error Adding the Project'
+						: 'There was an error updating the Project',
 			});
 		} else {
 			toast({
 				variant: 'default',
-				title: 'Added Project Successfully!',
+				title:
+					projectData == null ? 'Added Project Successfully!' : 'Project Updated Successfully!',
 			});
 			redirect('/NoNoShouldNotBeOnPage');
 		}
