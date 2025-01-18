@@ -26,34 +26,38 @@ export const LanguagesContent: TechStackContent = {
 			name: 'CSS',
 			image: '/assets/languages/css.svg',
 		},
-		{
-			name: 'C++',
-			image: '/assets/languages/cPlusPlus.svg',
-		},
+		// {
+		// 	name: 'C++',
+		// 	image: '/assets/languages/cPlusPlus.svg',
+		// },
 		{
 			name: 'JavaScript',
 			image: '/assets/languages/javaScript.svg',
 		},
-		{
-			name: 'Java',
-			image: '/assets/languages/java.svg',
-		},
-		{
-			name: 'PHP',
-			image: '/assets/languages/php.svg',
-		},
+		// {
+		// 	name: 'Java',
+		// 	image: '/assets/languages/java.svg',
+		// },
+		// {
+		// 	name: 'PHP',
+		// 	image: '/assets/languages/php.svg',
+		// },
 		{
 			name: 'TypeScript',
 			image: '/assets/languages/typeScript.svg',
 		},
 		{
-			name: 'Rust',
-			image: '/assets/languages/rust.svg',
+			name: 'HTML',
+			image: '/assets/languages/html.svg',
 		},
-		{
-			name: 'Python',
-			image: '/assets/languages/python.svg',
-		},
+		// {
+		// 	name: 'Rust',
+		// 	image: '/assets/languages/rust.svg',
+		// },
+		// {
+		// 	name: 'Python',
+		// 	image: '/assets/languages/python.svg',
+		// },
 	],
 };
 
@@ -76,10 +80,10 @@ export const FrameworksContent: TechStackContent = {
 			name: 'Fastify',
 			image: 'assets/frameworks/fastify.svg',
 		},
-		{
-			name: 'Flutter',
-			image: 'assets/frameworks/flutter.svg',
-		},
+		// {
+		// 	name: 'Flutter',
+		// 	image: 'assets/frameworks/flutter.svg',
+		// },
 		{
 			name: 'Next.js',
 			image: 'assets/frameworks/nextjs.svg',
@@ -88,10 +92,10 @@ export const FrameworksContent: TechStackContent = {
 			name: 'React',
 			image: 'assets/frameworks/react.svg',
 		},
-		{
-			name: 'Svelte',
-			image: 'assets/frameworks/svelte.svg',
-		},
+		// {
+		// 	name: 'Svelte',
+		// 	image: 'assets/frameworks/svelte.svg',
+		// },
 		{
 			name: 'TailwindCSS',
 			image: 'assets/frameworks/tailwindcss.svg',
@@ -126,10 +130,10 @@ export const DatabasesContent: TechStackContent = {
 			name: 'SQL',
 			image: 'assets/databases/sql.svg',
 		},
-		{
-			name: 'SQLite',
-			image: 'assets/databases/sqLite.svg',
-		},
+		// {
+		// 	name: 'SQLite',
+		// 	image: 'assets/databases/sqLite.svg',
+		// },
 		{
 			name: 'Supabase',
 			image: 'assets/databases/supabase.svg',
@@ -148,18 +152,18 @@ export const DatabasesContent: TechStackContent = {
 export const LibrariesContent: TechStackContent = {
 	title: 'Libraries',
 	content: [
-		{
-			name: 'Bootstrap',
-			image: 'assets/libraries/bootstrap.svg',
-		},
+		// {
+		// 	name: 'Bootstrap',
+		// 	image: 'assets/libraries/bootstrap.svg',
+		// },
 		{
 			name: 'Framer Motion',
 			image: 'assets/libraries/framerMotion.svg',
 		},
-		{
-			name: 'Material UI',
-			image: 'assets/libraries/materialUi.svg',
-		},
+		// {
+		// 	name: 'Material UI',
+		// 	image: 'assets/libraries/materialUi.svg',
+		// },
 		{
 			name: 'Socket.IO',
 			image: 'assets/libraries/socketio.svg',
@@ -192,10 +196,10 @@ export const OrmsContent: TechStackContent = {
 export const OtherContent: TechStackContent = {
 	title: 'Others',
 	content: [
-		{
-			name: 'Docker',
-			image: 'assets/docker.svg',
-		},
+		// {
+		// 	name: 'Docker',
+		// 	image: 'assets/docker.svg',
+		// },
 		{
 			name: 'Figma',
 			image: 'assets/figma.svg',
@@ -204,14 +208,14 @@ export const OtherContent: TechStackContent = {
 			name: 'Git',
 			image: 'assets/git.svg',
 		},
-		{
-			name: 'GitHub',
-			image: 'assets/github.svg',
-		},
-		{
-			name: 'GraphQL',
-			image: 'assets/graphql.svg',
-		},
+		// {
+		// 	name: 'GitHub',
+		// 	image: 'assets/github.svg',
+		// },
+		// {
+		// 	name: 'GraphQL',
+		// 	image: 'assets/graphql.svg',
+		// },
 		{
 			name: 'Node.js',
 			image: 'assets/nodejs.svg',
@@ -220,18 +224,18 @@ export const OtherContent: TechStackContent = {
 			name: 'Nodemon',
 			image: 'assets/nodemon.svg',
 		},
-		{
-			name: 'Oracle',
-			image: 'assets/oracle.svg',
-		},
+		// {
+		// 	name: 'Oracle',
+		// 	image: 'assets/oracle.svg',
+		// },
 		{
 			name: 'Sass',
 			image: 'assets/sass.svg',
 		},
-		{
-			name: 'WooCommerce',
-			image: 'assets/woocommerce.svg',
-		},
+		// {
+		// 	name: 'WooCommerce',
+		// 	image: 'assets/woocommerce.svg',
+		// },
 		{
 			name: 'WordPress',
 			image: 'assets/wordpress.svg',
