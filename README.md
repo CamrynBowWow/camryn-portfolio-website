@@ -10,6 +10,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - Clerk
 - [Devicon](https://devicon.dev/)
 - date-fns
+- date-fns-tz
 - react-dropzone
 - html-react-parser
 

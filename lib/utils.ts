@@ -1,6 +1,6 @@
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
-import { formatInTimeZone, fromZonedTime } from 'date-fns-tz';
+import { formatInTimeZone } from 'date-fns-tz';
 
 export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs));
@@ -21,8 +21,8 @@ export function convertFileToBase64(file: File): Promise<string> {
 }
 
 export function makeIOSLocalTimeStamp() {
-	const date = fromZonedTime(new Date(), '');
-	return date;
+	const timezoneOffset = new Date().getTimezoneOffset();
+	return new Date(new Date().getTime() - timezoneOffset * 60 * 1000);
 }
 
 export function makeIOSLocalDateString(date: Date | undefined) {
