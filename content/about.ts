@@ -172,6 +172,10 @@ export const LibrariesContent: TechStackContent = {
 			name: 'Three.js',
 			image: 'assets/libraries/threejs.svg',
 		},
+		{
+			name: 'Shadcn/ui',
+			image: 'assets/libraries/shadcn-ui-seeklogo.svg',
+		},
 	],
 };
 

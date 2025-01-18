@@ -79,7 +79,7 @@ export default function ProjectForm({ projectData }: ProjectFormProps) {
 					control={form.control}
 					name='description'
 					label='Project Description'
-					formDescription='What the project is used for and what features it does.'
+					formDescription='What the project is used for and what features it does. It is also possible to use normal HTML to style the text. Also make sure to use <br> twice when separating paragraphs.'
 				/>
 
 				<div className='flex flex-col md:flex-row gap-5'>
@@ -195,7 +195,7 @@ export default function ProjectForm({ projectData }: ProjectFormProps) {
 						<Link href='/NoNoShouldNotBeOnPage'>Cancel</Link>
 					</Button>
 					<Button variant='success' disabled={form.formState.isSubmitting} type='submit'>
-						{form.formState.isSubmitting ? 'Submitting...' : 'Add'}
+						{form.formState.isSubmitting ? 'Submitting...' : projectData ? 'Update' : 'Add'}
 					</Button>
 				</div>
 			</form>

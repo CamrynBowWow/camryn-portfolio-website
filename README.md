@@ -1,22 +1,5 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 <br/>
 
@@ -98,3 +81,12 @@ CREATE TYPE "public"."projectCategory" AS ENUM('tutorial', 'personal');--> state
 ```bash
 DROP TYPE "public"."projectStatus"
 ```
+### Lib Folder Info
+
+- **convertFileToBase64**
+    - Allows for images to be turned into string
+
+<br>
+
+- **makeIOSLocalDateString**
+    - This makes sure when any data is sent to the database that the date will of the current local machine timezone
