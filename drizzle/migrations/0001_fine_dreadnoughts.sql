@@ -1,0 +1,1 @@
+ALTER TABLE "codeProject" ALTER COLUMN "updatedAt" SET DATA TYPE timestamp with time zone;

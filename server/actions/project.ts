@@ -29,7 +29,6 @@ export async function addProject(
 		category: data.category,
 		status: data.status,
 		createdAt: makeIOSLocalTimeStamp(),
-		updatedAt: makeIOSLocalTimeStamp(),
 	});
 }
 
@@ -57,7 +56,6 @@ export async function updateProject(
 			activeLink: data.activeLink,
 			category: data.category,
 			status: data.status,
-			updatedAt: makeIOSLocalTimeStamp(),
 		})
 		.where(eq(CodeProjectTable.id, id));
 

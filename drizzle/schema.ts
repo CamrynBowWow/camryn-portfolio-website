@@ -18,7 +18,7 @@ export const CodeProjectTable = pgTable('codeProject', {
 	category: projectCategoryEnum('category').notNull(),
 	status: projectStatusEnum('status').notNull(),
 	createdAt: timestamp('createdAt').notNull().defaultNow(),
-	updatedAt: timestamp('updatedAt')
+	updatedAt: timestamp('updatedAt', { withTimezone: true })
 		.notNull()
 		.defaultNow()
 		.$onUpdate(() => new Date()),
