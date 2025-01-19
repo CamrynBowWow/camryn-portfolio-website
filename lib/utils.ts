@@ -1,6 +1,6 @@
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
-import { formatInTimeZone } from 'date-fns-tz';
+import { formatInTimeZone, getTimezoneOffset } from 'date-fns-tz';
 
 export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs));
@@ -20,12 +20,10 @@ export function convertFileToBase64(file: File): Promise<string> {
 	});
 }
 
-// Needs fixing when I move to another country
 export function makeIOSLocalTimeStamp() {
-	// Africa/Johannesburg is UTC+2, so the offset in minutes is 2 * 60
-	const johannesburgOffset = 2 * 60; // UTC+2 in minutes
+	const result = getTimezoneOffset('Africa/Johannesburg');
 
-	return new Date(new Date().getTime() + johannesburgOffset * 60 * 1000);
+	return new Date(new Date().getTime() + result);
 }
 
 export function makeIOSLocalDateString(date: Date | undefined) {
