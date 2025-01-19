@@ -1,5 +1,6 @@
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
+import { formatInTimeZone } from 'date-fns-tz';
 
 export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs));
@@ -17,4 +18,14 @@ export function convertFileToBase64(file: File): Promise<string> {
 
 		reader.readAsDataURL(file);
 	});
+}
+
+export function makeIOSLocalDateString(date: Date | undefined) {
+	if (date === undefined) {
+		return '';
+	}
+
+	// Fix timezone issue
+	const newDate = formatInTimeZone(date, 'Africa/Johannesburg', 'yyyy-MM-dd');
+	return newDate;
 }

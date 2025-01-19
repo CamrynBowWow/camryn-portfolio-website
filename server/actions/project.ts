@@ -2,8 +2,8 @@
 
 import { db } from '@/drizzle/db';
 import { CodeProjectTable } from '@/drizzle/schema';
+import { makeIOSLocalDateString } from '@/lib/utils';
 import { projectFormSchema } from '@/schema/project';
-import { format } from 'date-fns';
 import { eq } from 'drizzle-orm';
 import { z } from 'zod';
 
@@ -21,8 +21,8 @@ export async function addProject(
 		description: data.description,
 		reason: data.reason,
 		techStack: data.techStack,
-		creationDate: format(data.creationDate, 'yyyy-MM-dd'),
-		finishDate: data.finishDate ? format(data.finishDate, 'yyyy-MM-dd') : null,
+		creationDate: makeIOSLocalDateString(data.creationDate),
+		finishDate: makeIOSLocalDateString(data.finishDate),
 		image: data.image,
 		githubLink: data.githubLink,
 		activeLink: data.activeLink,
@@ -48,8 +48,8 @@ export async function updateProject(
 			description: data.description,
 			reason: data.reason,
 			techStack: data.techStack,
-			creationDate: format(data.creationDate, 'yyyy-MM-dd'),
-			finishDate: data.finishDate ? format(data.finishDate, 'yyyy-MM-dd') : null,
+			creationDate: makeIOSLocalDateString(data.creationDate),
+			finishDate: makeIOSLocalDateString(data.finishDate),
 			image: data.image,
 			githubLink: data.githubLink,
 			activeLink: data.activeLink,
