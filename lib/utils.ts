@@ -1,6 +1,6 @@
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
-import { formatInTimeZone } from 'date-fns-tz';
+import { formatInTimeZone, getTimezoneOffset } from 'date-fns-tz';
 
 export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs));
@@ -21,16 +21,9 @@ export function convertFileToBase64(file: File): Promise<string> {
 }
 
 export function makeIOSLocalTimeStamp() {
-	// const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-	// console.log(timeZone, 'yes');
-	// console.log(new Date().getTimezoneOffset(), 'here');
+	const result = getTimezoneOffset('Africa/Johannesburg', new Date());
 
-	const timezoneOffset = new Date().getTimezoneOffset();
-	return new Date(new Date().getTime() - timezoneOffset * 60 * 1000);
-
-	// const result = getTimezoneOffset('Africa/Johannesburg', new Date());
-
-	// return new Date(new Date().getTime() + result);
+	return new Date(new Date().getTime() + result);
 }
 
 export function makeIOSLocalDateString(date: Date | undefined) {
