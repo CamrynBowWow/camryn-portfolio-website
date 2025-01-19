@@ -3,6 +3,7 @@
 import { db } from '@/drizzle/db';
 import { CodeProjectTable } from '@/drizzle/schema';
 import { projectFormSchema } from '@/schema/project';
+import { format } from 'date-fns';
 import { eq } from 'drizzle-orm';
 import { z } from 'zod';
 
@@ -20,8 +21,8 @@ export async function addProject(
 		description: data.description,
 		reason: data.reason,
 		techStack: data.techStack,
-		creationDate: data.creationDate.toISOString(),
-		finishDate: data.finishDate?.toISOString(),
+		creationDate: format(data.creationDate, 'yyyy-MM-dd'),
+		finishDate: data.finishDate ? format(data.finishDate, 'yyyy-MM-dd') : null,
 		image: data.image,
 		githubLink: data.githubLink,
 		activeLink: data.activeLink,
@@ -47,8 +48,8 @@ export async function updateProject(
 			description: data.description,
 			reason: data.reason,
 			techStack: data.techStack,
-			creationDate: data.creationDate.toISOString(),
-			finishDate: data.finishDate?.toISOString(),
+			creationDate: format(data.creationDate, 'yyyy-MM-dd'),
+			finishDate: data.finishDate ? format(data.finishDate, 'yyyy-MM-dd') : null,
 			image: data.image,
 			githubLink: data.githubLink,
 			activeLink: data.activeLink,
