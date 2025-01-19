@@ -20,8 +20,8 @@ export function convertFileToBase64(file: File): Promise<string> {
 	});
 }
 
-export function makeIOSLocalDateString(date: Date | undefined) {
-	if (date === undefined) {
+export function makeIOSLocalDateString(date: Date | undefined | string) {
+	if (date === '' || date === undefined) {
 		return '';
 	}
 

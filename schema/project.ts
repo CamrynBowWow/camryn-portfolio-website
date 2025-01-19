@@ -10,8 +10,10 @@ export const projectFormSchema = z.object({
 		.date({ required_error: 'Creation Date is required' })
 		.max(new Date(), 'Creation Date should not be older than current date.'),
 	finishDate: z
-		.date({ required_error: 'Finish Date is required' })
-		.max(new Date(), 'Finish date should not be older than current date.')
+		.union([
+			z.date().max(new Date(), 'Finish date should not be older than current date.'),
+			z.string().length(0),
+		])
 		.optional(),
 	image: z
 		.string()

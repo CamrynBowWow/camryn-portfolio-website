@@ -118,6 +118,7 @@ export default function ProjectForm({ projectData }: ProjectFormProps) {
 						name='finishDate'
 						label='Project Finished Date'
 						formItemStyling='flex-1'
+						datePickerEmpty={true}
 					/>
 				</div>
 

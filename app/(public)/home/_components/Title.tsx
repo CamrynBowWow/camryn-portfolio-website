@@ -10,8 +10,7 @@ export default function Title() {
 			<p className='text-sm sm:text-lg lg:text-2xl 1-xl:text-4xl font-medium tracking-wide mt-0 sm:mt-1 md:mt-2 transition-1000'>
 				of <span className='font-light tracking-tight capitalize text-gray-600'>unlikely</span>{' '}
 				<span className='uppercase font-semibold'>Dev</span>
-				<span className='font-light'>elop</span>
-				<span className='uppercase'>er</span>
+				<span className='font-light'>eloper</span>
 			</p>
 		</div>
 	);

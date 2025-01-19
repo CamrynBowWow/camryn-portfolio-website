@@ -1,3 +1,5 @@
+'use client';
+
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 
 import { Control } from 'react-hook-form';
@@ -18,6 +20,8 @@ import { cn } from '@/lib/utils';
 import { Calendar } from './ui/calendar';
 import { formatDateLong } from '@/lib/formatters';
 import { Select, SelectContent, SelectTrigger, SelectValue } from './ui/select';
+import { Checkbox } from './ui/checkbox';
+import { useState } from 'react';
 
 export enum FormFieldType {
 	INPUT = 'input',
@@ -35,6 +39,7 @@ interface CustomProps {
 	placeholder?: string;
 	formItemStyling?: string;
 	formDescription?: string | React.ReactNode;
+	datePickerEmpty?: boolean;
 	disabled?: boolean;
 	children?: React.ReactNode;
 	renderSkeleton?: (field: unknown) => React.ReactNode;
@@ -78,7 +83,9 @@ export default function CustomFormField(props: CustomProps) {
 }
 
 function RenderInput({ field, props }: { field: any; props: CustomProps }) {
-	const { fieldType, label, placeholder, renderSkeleton } = props;
+	const { fieldType, label, placeholder, renderSkeleton, datePickerEmpty } = props;
+
+	const [isCheckboxChecked, setIsCheckboxChecked] = useState<boolean>(false);
 
 	switch (fieldType) {
 		case FormFieldType.INPUT:
@@ -113,8 +120,33 @@ function RenderInput({ field, props }: { field: any; props: CustomProps }) {
 						</FormControl>
 					</PopoverTrigger>
 					<PopoverContent className='w-auto' align='center'>
-						<Calendar mode='single' selected={field.value} onSelect={field.onChange} initialFocus />
+						<Calendar
+							mode='single'
+							selected={field.value}
+							onSelect={(date) => {
+								setIsCheckboxChecked(false);
+								field.onChange(date);
+							}}
+							initialFocus
+						/>
 					</PopoverContent>
+					{datePickerEmpty && (
+						<div className='flex items-center space-x-2 pl-[2px] pt-1'>
+							<Checkbox
+								id='emptyDate'
+								checked={isCheckboxChecked}
+								onCheckedChange={(checked) => {
+									const isChecked = checked === true;
+									setIsCheckboxChecked(isChecked);
+									const newValue = isChecked ? '' : new Date();
+									field.onChange(newValue);
+								}}
+							/>
+							<label htmlFor='emptyDate' className='form-description-mobile'>
+								If there is no finish date.
+							</label>
+						</div>
+					)}
 				</>
 			);
 		case FormFieldType.SKELETON:
