@@ -21,9 +21,16 @@ export function convertFileToBase64(file: File): Promise<string> {
 }
 
 export function makeIOSLocalTimeStamp() {
-	const result = getTimezoneOffset('Africa/Johannesburg', new Date());
+	// const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+	// console.log(timeZone, 'yes');
+	// console.log(new Date().getTimezoneOffset(), 'here');
 
-	return new Date(new Date().getTime() + result);
+	const timezoneOffset = new Date().getTimezoneOffset();
+	return new Date(new Date().getTime() - timezoneOffset * 60 * 1000);
+
+	// const result = getTimezoneOffset('Africa/Johannesburg', new Date());
+
+	// return new Date(new Date().getTime() + result);
 }
 
 export function makeIOSLocalDateString(date: Date | undefined) {
