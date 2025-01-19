@@ -1,7 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { formatDateMedium, formatDateTimeStamp } from '@/lib/formatters';
+import { formatDateTimeStamp } from '@/lib/formatters';
 import { ProjectContent } from '@/types';
 import { ColumnDef } from '@tanstack/react-table';
 import { Edit } from 'lucide-react';
@@ -67,7 +67,7 @@ export const columns: ColumnDef<ProjectContent>[] = [
 	{
 		accessorKey: 'createdAt',
 		header: 'DB Inserted',
-		cell: ({ row }) => <p>{formatDateMedium(row.getValue('createdAt'))}</p>,
+		cell: ({ row }) => <p>{formatDateTimeStamp(row.getValue('createdAt'))}</p>,
 	},
 	{
 		accessorKey: 'updatedAt',

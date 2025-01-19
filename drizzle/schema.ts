@@ -17,7 +17,7 @@ export const CodeProjectTable = pgTable('codeProject', {
 	activeLink: text('activeLink'),
 	category: projectCategoryEnum('category').notNull(),
 	status: projectStatusEnum('status').notNull(),
-	createdAt: timestamp('createdAt').notNull().defaultNow(),
+	createdAt: timestamp('createdAt', { withTimezone: true }).notNull().defaultNow(),
 	updatedAt: timestamp('updatedAt', { withTimezone: true })
 		.notNull()
 		.defaultNow()

@@ -5,6 +5,7 @@ const mediumDateFormatter = new Intl.DateTimeFormat(undefined, { dateStyle: 'med
 const timeStampDateFormatter = new Intl.DateTimeFormat(undefined, {
 	dateStyle: 'medium',
 	timeStyle: 'long',
+	hourCycle: 'h23',
 });
 
 export function formatDateLong(date: Date) {
