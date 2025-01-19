@@ -21,7 +21,7 @@ export function convertFileToBase64(file: File): Promise<string> {
 }
 
 export function makeIOSLocalTimeStamp() {
-	const result = getTimezoneOffset('Africa/Johannesburg');
+	const result = getTimezoneOffset('Africa/Johannesburg', new Date());
 
 	return new Date(new Date().getTime() + result);
 }
