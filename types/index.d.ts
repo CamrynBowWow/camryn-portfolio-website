@@ -18,6 +18,15 @@ declare type TechStackContent = {
 	}[];
 };
 
+declare type CertificationContent = {
+	title: string;
+	content: {
+		name: string;
+		date: string;
+		image: IframeHTMLAttributes<HTMLIFrameElement>;
+	}[];
+};
+
 declare type ProjectContent = {
 	id: string;
 	name: string;
