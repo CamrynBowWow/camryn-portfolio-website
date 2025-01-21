@@ -12,7 +12,7 @@ import {
 	DatabasesContent,
 } from '@/content/about';
 import { useState } from 'react';
-import Certificate from './_component/Certificate';
+import ImageOverlay from './_component/ImageOverlay';
 import CertificatesContent from './_component/CertificatesContent';
 
 export default function AboutPage() {
@@ -26,7 +26,6 @@ export default function AboutPage() {
 
 	const certificateDisplay = () => {
 		setIsCertificateDisplay(!isCertificateDisplayed);
-		console.log(certificate);
 	};
 
 	return (
@@ -38,11 +37,11 @@ export default function AboutPage() {
 			<TechStack stack={LibrariesContent} />
 			<TechStack stack={OrmsContent} />
 			<TechStack stack={OtherContent} />
-			{/* <Certificate
-				pdf={certificate}
+			<ImageOverlay
+				image={certificate}
 				isDisplayed={isCertificateDisplayed}
 				setIsDisplayed={certificateDisplay}
-			/> */}
+			/>
 			<CertificatesContent changeCertificate={changeCertificate} />
 		</section>
 	);

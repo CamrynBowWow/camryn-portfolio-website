@@ -277,38 +277,38 @@ export const codeDamnCertificates: CertificationContent = {
 	content: [
 		{
 			name: 'Learn Tailwind CSS 3 - A utility-first CSS framework',
-			date: 'December 30th, 2021 03:00:27 PM',
-			image: '/pdf/tailwindCSS3.pdf',
+			date: '30 December 2021',
+			image: '/assets/certificates/tailwindCSS3.jpg',
 		},
 		{
 			name: 'JavaScript Under The Hood',
-			date: 'December 7th, 2022 01:35:36 PM',
-			image: '/pdf/JavaScriptUnderHood.pdf',
+			date: '07 December 2022',
+			image: '/assets/certificates/JavaScriptUnderHood.jpg',
 		},
 		{
 			name: 'Learn Next.js 11 - Build Modern Next.js Applications',
-			date: 'November 28th, 2022 12:00:25 PM',
-			image: '/pdf/ModernNextjs.pdf',
+			date: '28 November 2022',
+			image: '/assets/certificates/ModernNextjs.jpg',
 		},
 		{
 			name: 'Advanced Next.js Concepts',
-			date: 'December 2nd, 2022 12:09:54 PM',
-			image: '/pdf/AdvancedNextjs.pdf',
+			date: '02 December 2022',
+			image: '/assets/certificates/AdvancedNextjs.jpg',
 		},
 		{
 			name: 'Learn the basics of web - Internet fundamentals',
-			date: 'November 22nd, 2022 07:01:32 PM',
-			image: '/pdf/InternetFundamentals.pdf',
+			date: '22 November 2022',
+			image: '/assets/certificates/InternetFundamentals.jpg',
 		},
-		{
-			name: 'Learn React 18 for free',
-			date: 'December 27th, 2022 11:56:32 PM',
-			image: '/pdf/React18.pdf',
-		},
-		{
-			name: 'Ultimate React Template Course',
-			date: 'February 25th, 2024 01:04:36 AM',
-			image: '/pdf/ReactTemplate.pdf',
-		},
+		// {
+		// 	name: 'Learn React 18 for free',
+		// 	date: 'December 27th, 2022 11:56:32 PM',
+		// 	image: '/assets/certificates/React18.jpg',
+		// },
+		// {
+		// 	name: 'Ultimate React Template Course',
+		// 	date: 'February 25th, 2024 01:04:36 AM',
+		// 	image: '/assets/certificates/ReactTemplate.jpg',
+		// },
 	],
 };
