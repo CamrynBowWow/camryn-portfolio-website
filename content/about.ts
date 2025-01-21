@@ -1,9 +1,9 @@
-import { AboutContent, TechStackContent } from '@/types';
+import { AboutContent, CertificationContent, TechStackContent } from '@/types';
 
 export const MainContent: AboutContent = {
 	title: 'Camryn Bowden',
 	startingPoint:
-		'A young and passionate developer with a strong enthusiasm for programming. Driven by a desire to learn and grow continually, I am always eager to explore new technologies and deepen my understanding of programming concepts. I thrive on expanding my skill set, mastering new languages, and tackling challenges to elevate my expertise.',
+		'A passionate developer with a strong enthusiasm for programming. Driven by a desire to learn and grow continually, I am always eager to explore new technologies and deepen my understanding of programming concepts. I thrive on expanding my skill set, mastering new languages, and tackling challenges to elevate my expertise.',
 	experience:
 		'I have been programming for several years, continuously expanding my knowledge and refining my skills. With a year of professional experience in software development, I am adept at learning new tech stacks and building upon my existing expertise. I hold a Bachelor of Science in Information Technology (Software Engineering) and a Higher Certificate in Information Systems (Software Development), which have provided me with a strong foundation in the field.',
 	passion:
@@ -271,3 +271,44 @@ export const profileContent: { site: string; link: string; image: string }[] = [
 		image: 'assets/linkedin.svg',
 	},
 ];
+
+export const codeDamnCertificates: CertificationContent = {
+	title: 'CodeDamn Certificates',
+	content: [
+		{
+			name: 'Learn Tailwind CSS 3 - A utility-first CSS framework',
+			date: '30 December 2021',
+			image: '/assets/certificates/tailwindCSS3.jpg',
+		},
+		{
+			name: 'JavaScript Under The Hood',
+			date: '07 December 2022',
+			image: '/assets/certificates/JavaScriptUnderHood.jpg',
+		},
+		{
+			name: 'Learn Next.js 11 - Build Modern Next.js Applications',
+			date: '28 November 2022',
+			image: '/assets/certificates/ModernNextjs.jpg',
+		},
+		{
+			name: 'Advanced Next.js Concepts',
+			date: '02 December 2022',
+			image: '/assets/certificates/AdvancedNextjs.jpg',
+		},
+		{
+			name: 'Learn the basics of web - Internet fundamentals',
+			date: '22 November 2022',
+			image: '/assets/certificates/InternetFundamentals.jpg',
+		},
+		// {
+		// 	name: 'Learn React 18 for free',
+		// 	date: 'December 27th, 2022 11:56:32 PM',
+		// 	image: '/assets/certificates/React18.jpg',
+		// },
+		// {
+		// 	name: 'Ultimate React Template Course',
+		// 	date: 'February 25th, 2024 01:04:36 AM',
+		// 	image: '/assets/certificates/ReactTemplate.jpg',
+		// },
+	],
+};
