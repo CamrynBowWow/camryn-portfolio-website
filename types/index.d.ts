@@ -27,6 +27,15 @@ declare type CertificationContent = {
 	}[];
 };
 
+declare type CertificateContent = {
+	title: string;
+	content: {
+		uni: string;
+		qualificationName: string;
+		dateRange: string;
+	}[];
+};
+
 declare type ProjectContent = {
 	id: string;
 	name: string;

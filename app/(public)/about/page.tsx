@@ -12,8 +12,8 @@ import {
 	DatabasesContent,
 } from '@/content/about';
 import { useState } from 'react';
-import ImageOverlay from './_component/ImageOverlay';
-import CertificatesContent from './_component/CertificatesContent';
+import ImageOverlay from './_components/ImageOverlay';
+import CertificatesContent from './_components/CertificatesContent';
 
 export default function AboutPage() {
 	const [certificate, setCertificate] = useState<string>('');

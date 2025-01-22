@@ -11,6 +11,10 @@
 		@apply transition-all duration-1000;
 	}
 
+	.timeline-circle {
+		@apply absolute -translate-x-1/2 left-1/2 right-1/2 h-[13px] w-[13px] bg-yellow-300 border-[2px] border-white rounded-full hidden timeline-hidden:block;
+	}
+
 	/* ==== About Content*/
 	.about-title {
 		@apply text-2xl sm:text-4xl tracking-wider font-semibold;

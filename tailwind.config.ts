@@ -20,6 +20,7 @@ export default {
 			screens: {
 				'x-ms': '400px',
 				'1-xl': '1400px',
+				'timeline-hidden': '850px',
 			},
 			fontFamily: {
 				poppins: ['var(--font-poppins)'],

@@ -2,10 +2,11 @@ import ProfileLinks from '@/components/about/ProfileLinks';
 import TechStack from '@/components/about/TechStack';
 import { LanguagesContent, MainContent } from '@/content/about';
 import Title from './_components/Title';
+import Content from './_components/Content';
 
 export default function Home() {
 	return (
-		<section className='container flex flex-col gap-16 md:gap-24 lg:gap-36'>
+		<section className='container flex flex-col gap-12 md:gap-20 lg:gap-36'>
 			<Title />
 
 			<div className='flex flex-col gap-2 items-center text-center'>
@@ -15,6 +16,8 @@ export default function Home() {
 				<p className='default-paragraph'>{MainContent.bestChoice}</p>
 				<ProfileLinks className='mt-4' />
 			</div>
+
+			<Content />
 
 			<TechStack stack={LanguagesContent} />
 		</section>
