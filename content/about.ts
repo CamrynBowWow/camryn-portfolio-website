@@ -1,4 +1,4 @@
-import { AboutContent, CertificationContent, TechStackContent } from '@/types';
+import { AboutContent, CertificateContent, CertificationContent, TechStackContent } from '@/types';
 
 export const MainContent: AboutContent = {
 	title: 'Camryn Bowden',
@@ -240,10 +240,10 @@ export const OtherContent: TechStackContent = {
 		// 	name: 'WooCommerce',
 		// 	image: 'assets/woocommerce.svg',
 		// },
-		{
-			name: 'WordPress',
-			image: 'assets/wordpress.svg',
-		},
+		// {
+		// 	name: 'WordPress',
+		// 	image: 'assets/wordpress.svg',
+		// },
 		{
 			name: 'Cloudflare',
 			image: 'assets/cloudflare.svg',
@@ -300,6 +300,11 @@ export const codeDamnCertificates: CertificationContent = {
 			date: '22 November 2022',
 			image: '/assets/certificates/InternetFundamentals.jpg',
 		},
+		{
+			name: 'CI/CD With GitHub Actions',
+			date: '10 January 2022',
+			image: '/assets/certificates/githubActions.jpg',
+		},
 		// {
 		// 	name: 'Learn React 18 for free',
 		// 	date: 'December 27th, 2022 11:56:32 PM',
@@ -310,5 +315,21 @@ export const codeDamnCertificates: CertificationContent = {
 		// 	date: 'February 25th, 2024 01:04:36 AM',
 		// 	image: '/assets/certificates/ReactTemplate.jpg',
 		// },
+	],
+};
+
+export const uniCertificates: CertificateContent = {
+	title: 'Academics',
+	content: [
+		{
+			uni: 'Eduvos',
+			qualificationName: 'Higher Certificate in Information Systems (Software Development)',
+			dateRange: '2020 - 2021',
+		},
+		{
+			uni: 'Eduvos',
+			qualificationName: 'Bachelor of Science in Information Technology (Software Engineering)',
+			dateRange: '2021 - 2024',
+		},
 	],
 };
