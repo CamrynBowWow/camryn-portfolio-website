@@ -1,3 +1,5 @@
+import TooltipWrapper from '@/components/TooltipWrapper';
+
 type ProjectFooterProps = {
 	techStack: string;
 	githubLink: string | null;
@@ -34,24 +36,30 @@ export default function ProjectFooter({
 						</p>
 						<p className='sm:flex hidden'>-</p>
 						{creditLink && (
-							<a href={creditLink} className='project-footer-link' target='_blank'>
-								YouTuber Channel link
-							</a>
+							<TooltipWrapper description={`${credit} YouTube Channel`}>
+								<a href={creditLink} className='project-footer-link' target='_blank'>
+									YouTuber Channel link
+								</a>
+							</TooltipWrapper>
 						)}
 					</div>
 				</div>
 			)}
 
 			<div className='flex x-ms:flex-row flex-col gap-2 x-ms:gap-8'>
-				{githubLink && (
-					<a target='_blank' className='project-footer-link' href={githubLink}>
-						Link To GitHub
-					</a>
-				)}
 				{activeLink && (
-					<a target='_blank' className='project-footer-link' href={activeLink}>
-						Live Link to Project
-					</a>
+					<TooltipWrapper description='Project Live Link'>
+						<a target='_blank' className='project-footer-link' href={activeLink}>
+							Live Link to Project
+						</a>
+					</TooltipWrapper>
+				)}
+				{githubLink && (
+					<TooltipWrapper description='Github Project Repository'>
+						<a target='_blank' className='project-footer-link' href={githubLink}>
+							Link To GitHub
+						</a>
+					</TooltipWrapper>
 				)}
 			</div>
 		</>

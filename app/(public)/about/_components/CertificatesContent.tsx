@@ -1,3 +1,4 @@
+import TooltipWrapper from '@/components/TooltipWrapper';
 import { codeDamnCertificates } from '@/content/about';
 import Image from 'next/image';
 
@@ -21,12 +22,14 @@ export default function CertificatesContent({ changeCertificate }: CertificatesC
 							<p className='text-lg lg:text-xl font-semibold tracking-[0.015em]'>{value.name}</p>
 							<p className='text-sm lg:text-base text-slate-600 font-normal'>{value.date}</p>
 						</div>
-						<div
-							onClick={() => changeCertificate(value.image)}
-							className='relative cursor-pointer h-[130px] sm:h-[150px] w-[220px] sm:w-[250px] hover:scale-105 duration-700'
-						>
-							<Image src={value.image} alt='Certificate Image' fill loading='lazy' />
-						</div>
+						<TooltipWrapper description='Click to Enlarge'>
+							<div
+								onClick={() => changeCertificate(value.image)}
+								className='relative cursor-pointer h-[130px] sm:h-[150px] w-[220px] sm:w-[250px] hover:scale-105 duration-700'
+							>
+								<Image src={value.image} alt='Certificate Image' fill loading='lazy' />
+							</div>
+						</TooltipWrapper>
 					</li>
 				))}
 			</ul>

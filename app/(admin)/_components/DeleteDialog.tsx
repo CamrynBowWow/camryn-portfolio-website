@@ -1,5 +1,6 @@
 'use client';
 
+import TooltipWrapper from '@/components/TooltipWrapper';
 import {
 	AlertDialog,
 	AlertDialogAction,
@@ -36,11 +37,13 @@ export default function DeleteDialog({ id }: { id: string }) {
 
 	return (
 		<AlertDialog>
-			<AlertDialogTrigger asChild>
-				<Button size='sm' variant='destructive'>
-					<Trash2 />
-				</Button>
-			</AlertDialogTrigger>
+			<TooltipWrapper description='Delete Project' delayDuration={200}>
+				<AlertDialogTrigger asChild>
+					<Button size='sm' variant='destructive'>
+						<Trash2 />
+					</Button>
+				</AlertDialogTrigger>
+			</TooltipWrapper>
 			<AlertDialogContent>
 				<AlertDialogTitle>Delete Project</AlertDialogTitle>
 				<AlertDialogDescription>
