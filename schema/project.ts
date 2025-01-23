@@ -22,4 +22,6 @@ export const projectFormSchema = z.object({
 	activeLink: z.string().optional(),
 	category: z.enum(PROJECT_CATEGORY),
 	status: z.enum(PROJECT_STATUS),
+	credit: z.string().optional(),
+	creditLink: z.string().optional(),
 });

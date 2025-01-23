@@ -32,6 +32,8 @@ export default async function ProjectPage({ params }: { params: ProjectPageParam
 				techStack={projectInfo.techStack}
 				githubLink={projectInfo.githubLink}
 				activeLink={projectInfo.activeLink}
+				credit={projectInfo.credit}
+				creditLink={projectInfo.creditLink}
 			/>
 
 			<div className='w-full x-ms:flex items-center justify-center hidden h-[280px] sm:h-[280px] md:h-[350px] mt-4'>

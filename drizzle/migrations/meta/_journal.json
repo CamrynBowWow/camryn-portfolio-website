@@ -22,6 +22,13 @@
       "when": 1737291692650,
       "tag": "0002_past_exiles",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1737568744140,
+      "tag": "0003_closed_bucky",
+      "breakpoints": true
     }
   ]
 }

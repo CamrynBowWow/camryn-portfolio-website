@@ -40,6 +40,8 @@ export default function ProjectForm({ projectData }: ProjectFormProps) {
 			activeLink: projectData?.activeLink ?? '',
 			category: projectData?.category ?? PROJECT_CATEGORY[0],
 			status: projectData?.status ?? PROJECT_STATUS[0],
+			credit: projectData?.credit ?? '',
+			creditLink: projectData?.creditLink ?? '',
 		},
 	});
 
@@ -171,6 +173,20 @@ export default function ProjectForm({ projectData }: ProjectFormProps) {
 							</SelectItem>
 						))}
 					</CustomFormField>
+
+					<CustomFormField
+						fieldType={FormFieldType.INPUT}
+						control={form.control}
+						name='credit'
+						label='YouTuber Name'
+						formDescription='Credit the YouTuber of the Tutorial video'
+					/>
+					<CustomFormField
+						fieldType={FormFieldType.INPUT}
+						control={form.control}
+						name='creditLink'
+						label='Link to YouTuber Channel'
+					/>
 
 					<CustomFormField
 						fieldType={FormFieldType.INPUT}

@@ -17,6 +17,8 @@ export const CodeProjectTable = pgTable('codeProject', {
 	activeLink: text('activeLink'),
 	category: projectCategoryEnum('category').notNull(),
 	status: projectStatusEnum('status').notNull(),
+	credit: text('credit'),
+	creditLink: text('creditLink'),
 	createdAt: timestamp('createdAt', { withTimezone: true }).notNull().defaultNow(),
 	updatedAt: timestamp('updatedAt', { withTimezone: true })
 		.notNull()
