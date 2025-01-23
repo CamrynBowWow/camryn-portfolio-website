@@ -28,6 +28,8 @@ export async function addProject(
 		activeLink: data.activeLink,
 		category: data.category,
 		status: data.status,
+		credit: data.credit,
+		creditLink: data.creditLink,
 	});
 }
 
@@ -55,6 +57,8 @@ export async function updateProject(
 			activeLink: data.activeLink,
 			category: data.category,
 			status: data.status,
+			credit: data.credit,
+			creditLink: data.creditLink,
 		})
 		.where(eq(CodeProjectTable.id, id));
 

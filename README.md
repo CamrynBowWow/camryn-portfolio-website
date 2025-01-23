@@ -45,6 +45,8 @@ Data that will be inserted into database:
 - active link
 - category
 - status
+- credit
+- credit link
 - created at
 - updated at
 

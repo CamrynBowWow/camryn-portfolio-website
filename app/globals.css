@@ -74,7 +74,7 @@
 	/* ==== Project Footer */
 
 	.project-footer-link {
-		@apply hover:text-black/50 duration-700;
+		@apply hover:text-black/50 duration-700 text-xs x-ms:text-sm x-ms:font-semibold font-medium underline underline-offset-2 x-ms:no-underline text-gray-700 x-ms:text-black;
 	}
 	/* ==== Project Footer */
 

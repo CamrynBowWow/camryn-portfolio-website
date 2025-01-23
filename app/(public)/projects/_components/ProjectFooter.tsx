@@ -2,9 +2,17 @@ type ProjectFooterProps = {
 	techStack: string;
 	githubLink: string | null;
 	activeLink: string | null;
+	credit: string | null;
+	creditLink: string | null;
 };
 
-export default function ProjectFooter({ techStack, githubLink, activeLink }: ProjectFooterProps) {
+export default function ProjectFooter({
+	techStack,
+	githubLink,
+	activeLink,
+	credit,
+	creditLink,
+}: ProjectFooterProps) {
 	return (
 		<>
 			<div className='flex flex-col gap-2'>
@@ -16,7 +24,25 @@ export default function ProjectFooter({ techStack, githubLink, activeLink }: Pro
 				</ul>
 			</div>
 
-			<div className='flex gap-8 text-sm font-semibold'>
+			{credit && (
+				<div className='flex flex-col gap-2 x-ms:gap-3'>
+					<h2 className='text-lg sm:text-xl'>Credit Of Tutorial</h2>
+
+					<div className='flex sm:flex-row flex-col gap-1 sm:gap-2 items-start sm:items-center'>
+						<p className='font-normal x-ms:font-light text-sm x-ms:text-base x-ms:tracking-tight tracking-wide'>
+							{credit}
+						</p>
+						<p className='sm:flex hidden'>-</p>
+						{creditLink && (
+							<a href={creditLink} className='project-footer-link' target='_blank'>
+								YouTuber Channel link
+							</a>
+						)}
+					</div>
+				</div>
+			)}
+
+			<div className='flex x-ms:flex-row flex-col gap-2 x-ms:gap-8'>
 				{githubLink && (
 					<a target='_blank' className='project-footer-link' href={githubLink}>
 						Link To GitHub
@@ -24,7 +50,7 @@ export default function ProjectFooter({ techStack, githubLink, activeLink }: Pro
 				)}
 				{activeLink && (
 					<a target='_blank' className='project-footer-link' href={activeLink}>
-						Live Link
+						Live Link to Project
 					</a>
 				)}
 			</div>

@@ -49,6 +49,8 @@ declare type ProjectContent = {
 	activeLink: string | null;
 	category: (typeof PROJECT_CATEGORY)[number];
 	status: (typeof PROJECT_STATUS)[number];
+	credit: string | null;
+	creditLink: string | null;
 	createdAt: Date;
 	updatedAt: Date;
 };
