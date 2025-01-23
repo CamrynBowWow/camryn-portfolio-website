@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { db } from '@/drizzle/db';
 import { DataTable } from '../_components/data-table';
 import { columns } from '../_components/columns';
+import TooltipWrapper from '@/components/TooltipWrapper';
 
 export const revalidate = 0;
 
@@ -25,11 +26,13 @@ export default async function Page() {
 					<div className='ml-auto size-10 sm:size-8'>
 						<UserButton appearance={{ elements: { userButtonAvatarBox: 'size-full' } }} />
 					</div>
-					<h2 className='sm:block hidden font-light'>{user?.fullName}</h2>
+					<h2 className='sm:block hidden font-light cursor-default'>{user?.fullName}</h2>
 				</div>
-				<Button asChild>
-					<Link href='NoNoShouldNotBeOnPage/add'>Add</Link>
-				</Button>
+				<TooltipWrapper description='Add New Project'>
+					<Button asChild>
+						<Link href='NoNoShouldNotBeOnPage/add'>Add</Link>
+					</Button>
+				</TooltipWrapper>
 			</div>
 			<div className='py-10'>
 				<DataTable columns={columns} data={data} />

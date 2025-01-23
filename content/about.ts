@@ -259,16 +259,18 @@ export const OtherContent: TechStackContent = {
 	],
 };
 
-export const profileContent: { site: string; link: string; image: string }[] = [
+export const profileContent: { site: string; link: string; image: string; tooltip: string }[] = [
 	{
 		site: 'Github',
 		link: 'https://github.com/CamrynBowWow',
 		image: 'assets/github.svg',
+		tooltip: 'Link to my Github',
 	},
 	{
 		site: 'Linkedin',
 		link: 'https://www.linkedin.com/in/camryn-b-a38a9233b/',
 		image: 'assets/linkedin.svg',
+		tooltip: 'Link to my Linkedin',
 	},
 ];
 
