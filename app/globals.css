@@ -87,6 +87,18 @@
 	.project-body-header {
 		@apply font-semibold text-xl sm:text-2xl underline-offset-2 underline;
 	}
+
+	.project-body-features ul {
+		@apply list-normal pl-5 sm:pl-[28px];
+	}
+
+	.project-body-features h3 {
+		@apply font-bold tracking-wide text-base text-pretty sm:text-lg mb-2 sm:mb-[5px];
+	}
+
+	.project-body-features b {
+		@apply font-semibold tracking-wide;
+	}
 	/* ==== Project Body */
 
 	.projects-image {

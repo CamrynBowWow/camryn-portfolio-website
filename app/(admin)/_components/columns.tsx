@@ -35,13 +35,14 @@ export const columns: ColumnDef<ProjectContent>[] = [
 		accessorKey: 'activeLink',
 		header: 'Link To Live Project',
 		cell: ({ row }) =>
-			row.getValue('githubLink') && (
-				<Link
+			row.getValue('activeLink') && (
+				<a
 					className='underline-offset-[5px] underline text-sky-400 hover:text-purple-500 duration-300'
 					href={row.getValue('activeLink')}
+					target='_blank'
 				>
 					Live Project Link
-				</Link>
+				</a>
 			),
 	},
 	{

@@ -10,7 +10,7 @@ export default function ProjectBody({ description, reason }: ProjectBodyProps) {
 		<div className='flex flex-col gap-5'>
 			<div className='project-body-child-container'>
 				<h2 className='project-body-header'>Features</h2>
-				<div className='default-paragraph'>{parse(description)}</div>
+				<div className='default-paragraph project-body-features'>{parse(description)}</div>
 			</div>
 			<div className='project-body-child-container'>
 				<h2 className='project-body-header'>Purpose</h2>

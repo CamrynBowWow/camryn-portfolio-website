@@ -9,6 +9,10 @@ export default {
 		'./app/**/*.{js,ts,jsx,tsx,mdx}',
 	],
 	theme: {
+		listStyleType: {
+			normal: 'revert',
+		},
+
 		container: {
 			center: true,
 			padding: '2rem',

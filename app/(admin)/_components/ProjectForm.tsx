@@ -81,7 +81,7 @@ export default function ProjectForm({ projectData }: ProjectFormProps) {
 					control={form.control}
 					name='description'
 					label='Project Description'
-					formDescription='What the project is used for and what features it does. It is also possible to use normal HTML to style the text. Also make sure to use <br> twice when separating paragraphs.'
+					formDescription='What the project is used for and what features it does. It is also possible to use normal HTML to style the text. Also make sure to use <br> twice when separating paragraphs.Styling is done to <h3>, <b>, <ul> tags when displayed on Project Page. For lists use <ul> and <li> tags. For headers use <h3> tags.'
 				/>
 
 				<div className='flex flex-col md:flex-row gap-5'>
