@@ -40,7 +40,6 @@ interface CustomProps {
 	formItemStyling?: string;
 	formDescription?: string | React.ReactNode;
 	datePickerEmpty?: boolean;
-	disabled?: boolean;
 	children?: React.ReactNode;
 	renderSkeleton?: (field: unknown) => React.ReactNode;
 }
