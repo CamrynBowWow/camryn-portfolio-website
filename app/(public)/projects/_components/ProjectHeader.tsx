@@ -1,4 +1,4 @@
-import StatusCircle from '@/components/projects/StatusCircle';
+import StatusCircle from '@/app/(public)/projects/_components/StatusCircle';
 import { formatDateLong, formatText } from '@/lib/formatters';
 
 type ProjectHeaderProps = {

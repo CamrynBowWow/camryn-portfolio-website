@@ -36,7 +36,7 @@ export default async function ProjectPage({ params }: { params: ProjectPageParam
 				creditLink={projectInfo.creditLink}
 			/>
 
-			<div className='w-full x-ms:flex items-center justify-center hidden h-[280px] sm:h-[280px] md:h-[350px] mt-4'>
+			<div className='w-full x-sm:flex items-center justify-center hidden h-[280px] sm:h-[280px] md:h-[350px] mt-4'>
 				<div className='relative h-full w-full sm:w-[500px] md:w-[700px]'>
 					<Image
 						src={projectInfo.image}
