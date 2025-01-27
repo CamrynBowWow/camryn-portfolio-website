@@ -22,7 +22,7 @@ export default {
 		},
 		extend: {
 			screens: {
-				'x-ms': '400px',
+				'x-sm': '400px',
 				'1-xl': '1400px',
 				'timeline-hidden': '850px',
 			},

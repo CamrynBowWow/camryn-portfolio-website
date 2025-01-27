@@ -16,7 +16,7 @@ export default function CertificatesContent({ changeCertificate }: CertificatesC
 				{content.map((value) => (
 					<li
 						key={value.name}
-						className='flex items-center justify-between flex-col py-6 px-4 x-ms:px-9 border-gray-300 h-auto sm:h-80 border gap-5 rounded-md shadow-md'
+						className='flex items-center justify-between flex-col py-6 px-4 x-sm:px-9 border-gray-300 h-auto sm:h-80 border gap-5 rounded-md shadow-md'
 					>
 						<div className='flex flex-col gap-2 w-full text-left'>
 							<p className='text-lg lg:text-xl font-semibold tracking-[0.015em]'>{value.name}</p>

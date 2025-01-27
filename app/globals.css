@@ -31,16 +31,16 @@
 	}
 
 	.tech-stack-container {
-		@apply flex justify-center x-ms:justify-start flex-wrap gap-4 cursor-default px-2;
+		@apply flex justify-center x-sm:justify-start flex-wrap gap-4 cursor-default px-2;
 	}
 
 	.tech-stack-content-container {
-		@apply relative text-sm sm:text-lg flex gap-3 items-center py-2 px-3 sm:px-4 bg-white sm:h-[70px] border border-gray-300 rounded-md shadow-md w-[200px] x-ms:w-[150px] sm:w-[220px] overflow-hidden;
+		@apply relative text-sm sm:text-lg flex gap-3 items-center py-2 px-3 sm:px-4 bg-white sm:h-[70px] border border-gray-300 rounded-md shadow-md w-[200px] x-sm:w-[150px] sm:w-[220px] overflow-hidden;
 	}
 	/* ==== About TechStack*/
 
 	.form-description-mobile {
-		@apply x-ms:text-[0.8rem] text-[10px];
+		@apply x-sm:text-[0.8rem] text-[10px];
 	}
 
 	/* ==== File Upload */
@@ -74,7 +74,7 @@
 	/* ==== Project Footer */
 
 	.project-footer-link {
-		@apply hover:text-black/50 duration-700 text-xs x-ms:text-sm x-ms:font-semibold font-medium underline underline-offset-2 x-ms:no-underline text-gray-700 x-ms:text-black;
+		@apply hover:text-black/50 duration-700 text-xs x-sm:text-sm x-sm:font-semibold font-medium underline underline-offset-2 x-sm:no-underline text-gray-700 x-sm:text-black;
 	}
 	/* ==== Project Footer */
 
@@ -106,7 +106,7 @@
 	}
 
 	.projects-list-child-container {
-		@apply relative w-[290px] x-ms:w-[370px] sm:w-[450px] xl:w-full h-52 x-ms:h-56 sm:h-64 lg:h-72;
+		@apply relative w-[290px] x-sm:w-[370px] sm:w-[450px] xl:w-full h-52 x-sm:h-56 sm:h-64 lg:h-72;
 	}
 
 	.projects-background-overlay {

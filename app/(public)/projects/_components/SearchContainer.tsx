@@ -1,3 +1,5 @@
+'use client';
+
 import { Button } from '@/components/ui/button';
 import { Form } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
@@ -37,9 +39,11 @@ export default function SearchContainer({
 	}
 
 	async function onReset() {
-		form.resetField('category');
-		form.resetField('status');
-		form.resetField('dateOrder');
+		form.reset({
+			category: 'all',
+			status: 'all',
+			dateOrder: 'newest',
+		});
 
 		applyFormFilters({
 			category: 'all',
@@ -49,10 +53,10 @@ export default function SearchContainer({
 	}
 
 	return (
-		<div className='pb-16 lg:pb-12 flex lg:flex-row flex-col justify-between lg:items-end items-start gap-8'>
+		<div className='pb-16 lg:pb-12 flex lg:flex-row flex-col justify-between lg:items-end items-start gap-6 x-sm:gap-8'>
 			<Input
-				placeholder='Filter Project Name...'
-				className='max-w-xs'
+				placeholder='Search by Project Name...'
+				className='max-w-xs text-xs px-2 md:px-3'
 				onChange={handleFilterChange}
 			/>
 
@@ -60,13 +64,12 @@ export default function SearchContainer({
 				<form
 					onChange={form.handleSubmit(onSubmit)}
 					onSubmit={form.handleSubmit(onReset)}
-					className='flex items-end gap-6'
+					className='flex justify-center x-sm:justify-start items-end gap-6 flex-wrap md:flex-nowrap'
 				>
 					<CustomSearchSelect
 						control={form.control}
 						name='category'
 						label='Project Category'
-						placeholder='Select Category'
 						array={PROJECT_CATEGORY_SEARCH}
 					/>
 
@@ -74,18 +77,17 @@ export default function SearchContainer({
 						control={form.control}
 						name='status'
 						label='Project Status'
-						placeholder='Select Status'
 						array={PROJECT_STATUS_SEARCH}
 					/>
 
 					<CustomSearchSelect
 						control={form.control}
 						name='dateOrder'
-						label='Date Order'
+						label='Order By'
 						array={DATE_SEARCH}
 					/>
 
-					<div className='ml-3 lg:ml-5 flex items-center justify-end'>
+					<div className='ml-0 lg:ml-3 flex items-center w-[135px] lg:w-auto x-sm:justify-start justify-end'>
 						<Button
 							variant='default'
 							disabled={form.formState.isSubmitting}

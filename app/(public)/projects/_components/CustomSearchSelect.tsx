@@ -22,7 +22,7 @@ interface CustomSearchSelectProps {
 	control: Control<any>;
 	name: string;
 	label?: string;
-	placeholder?: string;
+
 	array: SearchTypeString;
 }
 
@@ -30,7 +30,7 @@ export default function CustomSearchSelect({
 	control,
 	name,
 	label,
-	placeholder,
+
 	array,
 }: CustomSearchSelectProps) {
 	return (
@@ -38,20 +38,20 @@ export default function CustomSearchSelect({
 			control={control}
 			name={name}
 			render={({ field }) => (
-				<FormItem className='flex flex-col gap-2 items-start space-y-0 max-w-72'>
-					<FormLabel className='ml-[3px] text-pretty text-[14px] font-normal tracking-tight text-gray-600'>
+				<FormItem className='flex flex-col gap-1 lg:gap-2 items-start space-y-0'>
+					<FormLabel className='ml-[3px] text-pretty text-[14px] 2xl:text-base font-normal tracking-tight text-gray-600'>
 						{label}
 					</FormLabel>
 
 					<Select onValueChange={field.onChange} value={field.value} defaultValue={field.value}>
 						<FormControl>
-							<SelectTrigger className='capitalize w-[135px] text-xs gap-2 h-8 pr-1 pl-[6px]'>
-								<SelectValue placeholder={placeholder} />
+							<SelectTrigger className='capitalize w-[135px] 2xl:w-[170px] text-xs 2xl:text-base gap-2 h-8 pr-1 pl-2 2xl:py-4'>
+								<SelectValue />
 							</SelectTrigger>
 						</FormControl>
 						<SelectContent className='capitalize'>
 							{array.map((value) => (
-								<SelectItem className='text-xs' value={value} key={value}>
+								<SelectItem className='text-xs 2xl:text-base' value={value} key={value}>
 									{value}
 								</SelectItem>
 							))}

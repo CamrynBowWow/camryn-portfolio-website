@@ -16,7 +16,7 @@ export default function CertificateCard({
 	return (
 		<div
 			className={cn(
-				'flex flex-col text-center w-full x-ms:w-[90%] sm:w-[75%] timeline-hidden:w-[48%]',
+				'flex flex-col text-center w-full x-sm:w-[90%] sm:w-[75%] timeline-hidden:w-[48%]',
 				className
 			)}
 		>
