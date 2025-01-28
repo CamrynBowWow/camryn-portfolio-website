@@ -1,6 +1,5 @@
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
-import { formatInTimeZone } from 'date-fns-tz';
 
 export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs));
@@ -25,7 +24,10 @@ export function makeIOSLocalDateString(date: Date | undefined | string) {
 		return '';
 	}
 
-	// Fix timezone issue
-	const newDate = formatInTimeZone(date, 'Africa/Johannesburg', 'yyyy-MM-dd');
-	return newDate;
+	return new Date(date).toLocaleDateString('en-ZA', {
+		timeZone: 'Africa/Johannesburg',
+		year: 'numeric',
+		month: '2-digit',
+		day: '2-digit',
+	});
 }
