@@ -25,7 +25,11 @@ export default function ProjectHeader({
 				<div>
 					<p className='text-xs sm:text-sm text-muted-foreground '>
 						<span>{formatDateLong(new Date(creationDate))}</span> -{' '}
-						{finishDate ? <span>{formatDateLong(new Date(finishDate))}</span> : 'Still In Progress'}
+						{finishDate ? (
+							<span>{formatDateLong(new Date(finishDate))}</span>
+						) : (
+							<span>In Progress</span>
+						)}
 					</p>
 				</div>
 			</div>

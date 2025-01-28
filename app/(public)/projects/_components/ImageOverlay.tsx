@@ -32,7 +32,11 @@ export default function ImageOverlay({
 
 				<div className='image-overlay-date-container'>
 					<p>{formatDateMedium(new Date(creationDate))}</p>-
-					{finishDate && <p>{formatDateMedium(new Date(finishDate))}</p>}
+					{finishDate ? (
+						<span>{formatDateMedium(new Date(finishDate))}</span>
+					) : (
+						<span>In Progress</span>
+					)}
 				</div>
 			</div>
 		</div>
