@@ -8,12 +8,15 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - Shadcn
 - Next.js 15
 - Clerk
-- [Devicon](https://devicon.dev/)
 - date-fns
 - react-dropzone
 - html-react-parser
 
 <br/>
+
+[Devicon](https://devicon.dev/) site was used for SVGs on the app
+
+<br>
 
 # Project Information
 
