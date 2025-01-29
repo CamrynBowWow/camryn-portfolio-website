@@ -41,6 +41,19 @@ export default function ProjectHeader({
 					<p>{status}</p>
 				</div>
 			</div>
+
+			{status === 'unavailable' && (
+				<div className='flex flex-col gap-1 sm:gap-[2px]'>
+					<h3 className='font-semibold tracking-wide text-sm sm:text-base underline underline-offset-2'>
+						Live App
+					</h3>
+					<p className='text-xs sm:text-sm tracking-tight max-w-sm sm:max-w-md text-balance sm:text-pretty text-red-400'>
+						The <span className='font-semibold text-gray-600'>Live App</span> is working and
+						accessible. However, it appears unavailable because the database storing its data is
+						currently paused.
+					</p>
+				</div>
+			)}
 		</>
 	);
 }

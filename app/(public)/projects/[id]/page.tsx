@@ -1,9 +1,9 @@
 import { db } from '@/drizzle/db';
-import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import ProjectHeader from '../_components/ProjectHeader';
 import ProjectBody from '../_components/ProjectBody';
 import ProjectFooter from '../_components/ProjectFooter';
+import ProjectImage from '../_components/ProjectImage';
 
 type ProjectPageParams = Promise<{ id: string }>;
 
@@ -36,16 +36,7 @@ export default async function ProjectPage({ params }: { params: ProjectPageParam
 				creditLink={projectInfo.creditLink}
 			/>
 
-			<div className='w-full x-sm:flex items-center justify-center hidden h-[280px] sm:h-[280px] md:h-[350px] mt-4'>
-				<div className='relative h-full w-full sm:w-[500px] md:w-[700px]'>
-					<Image
-						src={projectInfo.image}
-						alt={`Image of ${projectInfo.name} Project`}
-						loading='lazy'
-						fill
-					/>
-				</div>
-			</div>
+			<ProjectImage image={projectInfo.image} name={projectInfo.name} />
 		</section>
 	);
 }
