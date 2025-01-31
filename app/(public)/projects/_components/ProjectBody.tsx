@@ -14,7 +14,7 @@ export default function ProjectBody({ description, reason }: ProjectBodyProps) {
 			</div>
 			<div className='project-body-child-container'>
 				<h2 className='project-body-header'>Purpose</h2>
-				<div className='default-paragraph'>{parse(reason)}</div>
+				<div className='default-paragraph project-body-features'>{parse(reason)}</div>
 			</div>
 		</div>
 	);
