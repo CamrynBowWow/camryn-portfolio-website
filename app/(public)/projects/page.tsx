@@ -7,7 +7,7 @@ export const revalidate = 15;
 
 export default async function ProjectsPage() {
 	const projects = await db.query.CodeProjectTable.findMany({
-		orderBy: [desc(CodeProjectTable.finishDate)],
+		orderBy: [desc(CodeProjectTable.creationDate)],
 	});
 
 	return (
