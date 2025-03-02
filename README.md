@@ -8,6 +8,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - Shadcn
 - Next.js 15
 - Clerk
+- Neon
 - date-fns
 - react-dropzone
 - html-react-parser
