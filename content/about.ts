@@ -307,6 +307,11 @@ export const codeDamnCertificates: CertificationContent = {
 			date: '10 January 2022',
 			image: '/assets/certificates/githubActions.jpg',
 		},
+		{
+			name: 'Learn Advanced HTML and CSS Concepts',
+			date: '18 March 2025',
+			image: '/assets/certificates/learnAdvancedHTMLCSSConcepts.jpg',
+		},
 		// {
 		// 	name: 'Learn React 18 for free',
 		// 	date: 'December 27th, 2022 11:56:32 PM',
