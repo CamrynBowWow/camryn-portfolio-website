@@ -1,4 +1,4 @@
-export const PROJECT_CATEGORY = ['tutorial', 'personal'] as const;
+export const PROJECT_CATEGORY = ['tutorial', 'personal', 'freelance'] as const;
 
 export const PROJECT_STATUS = [
 	'completed',
@@ -6,6 +6,7 @@ export const PROJECT_STATUS = [
 	'started',
 	'unavailable',
 	'enhancements',
+	'cancelled',
 ] as const;
 
 export const PROJECT_CATEGORY_SEARCH = ['all', ...PROJECT_CATEGORY] as const;

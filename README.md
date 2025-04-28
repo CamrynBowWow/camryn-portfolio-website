@@ -80,7 +80,7 @@ Data that will be inserted into database:
 When generating for database make sure previous enums are deleted in database or make it so they aren't created again before doing migration.
 
 ```bash
-CREATE TYPE "public"."projectCategory" AS ENUM('tutorial', 'personal');--> statement-breakpoint
+CREATE TYPE "public"."projectCategory" AS ENUM('tutorial', 'personal', 'freelance');--> statement-breakpoint
 ```
 
 - Go to **SQL Editor**
@@ -89,6 +89,17 @@ CREATE TYPE "public"."projectCategory" AS ENUM('tutorial', 'personal');--> state
 ```bash
 DROP TYPE "public"."projectStatus"
 ```
+
+- Add to table using **SQL Editor**
+
+```bash
+ALTER TYPE "public"."projectStatus" ADD VALUE 'cancelled';
+```
+
+```bash
+ALTER TYPE "public"."projectCategory" ADD VALUE 'freelance';
+```
+
 ### Lib Folder Info
 
 - **convertFileToBase64**
