@@ -14,6 +14,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - date-fns
 - react-dropzone
 - html-react-parser
+- Neon
+- Drizzle
 
 <br/>
 

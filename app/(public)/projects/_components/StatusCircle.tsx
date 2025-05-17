@@ -17,7 +17,7 @@ export default function StatusCircle({ status, className }: StatusCircleProps) {
 					? 'bg-yellow-400'
 					: status === 'started'
 					? 'bg-sky-400'
-					: status === 'unavailable'
+					: status === 'unavailable' || status === 'cancelled'
 					? 'bg-red-400'
 					: 'bg-teal-400',
 				className

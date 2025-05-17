@@ -19,7 +19,7 @@ export default function ProjectFooter({
 		<>
 			<div className='flex flex-col gap-2'>
 				<h2 className='text-lg sm:text-xl'>Tech Stack</h2>
-				<ul className='flex text-xs sm:text-sm pl-5 gap-2 sm:gap-10 text-neutral-600 list-normal font-medium sm:font-normal flex-col sm:flex-row capitalize'>
+				<ul className='flex flex-wrap text-xs sm:text-sm pl-5 gap-2 md:gap-10 text-neutral-600 list-normal font-medium sm:font-normal flex-col md:flex-row capitalize'>
 					{techStack.split(',').map((value) => (
 						<li key={value}>{value}</li>
 					))}
