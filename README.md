@@ -40,7 +40,9 @@ Data that will be inserted into database:
 - Tech Stack of Project
 - [optional] Credit of Youtuber for tutorial of the project
 
-#### Table Date Layout
+### Table Date Layout
+
+#### Project
 - name
 - description
 - reason
@@ -54,6 +56,16 @@ Data that will be inserted into database:
 - status
 - credit
 - credit link
+- created at
+- updated at
+
+#### Job History
+- job title
+- company
+- tech stack
+- job duties
+- started date
+- ended date
 - created at
 - updated at
 

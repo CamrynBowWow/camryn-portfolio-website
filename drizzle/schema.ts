@@ -25,3 +25,18 @@ export const CodeProjectTable = pgTable('codeProject', {
 		.defaultNow()
 		.$onUpdate(() => new Date()),
 });
+
+export const JobHistoryTable = pgTable('jobHistory', {
+	id: uuid('id').primaryKey().defaultRandom(),
+	jobTitle: text('jobTitle').notNull(),
+	company: text('company'),
+	techStack: text('techStack').notNull(),
+	jobDuties: text('jobDuties'),
+	startedDate: date('startedDate').notNull(),
+	endedDate: date('endedDate'),
+	createdAt: timestamp('createdAt', { withTimezone: true }).notNull().defaultNow(),
+	updatedAt: timestamp('updatedAt', { withTimezone: true })
+		.notNull()
+		.defaultNow()
+		.$onUpdate(() => new Date()),
+});
