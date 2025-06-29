@@ -7,6 +7,7 @@ import { db } from '@/drizzle/db';
 import { DataTable } from '../_components/data-table';
 import { columns } from '../_components/columns';
 import TooltipWrapper from '@/components/TooltipWrapper';
+import JobSection from '../_components/JobSection';
 
 export const revalidate = 0;
 
@@ -28,15 +29,19 @@ export default async function Page() {
 					</div>
 					<h2 className='sm:block hidden font-light cursor-default'>{user?.fullName}</h2>
 				</div>
-				<TooltipWrapper description='Add New Project'>
-					<Button asChild>
-						<Link href='NoNoShouldNotBeOnPage/add'>Add</Link>
-					</Button>
-				</TooltipWrapper>
 			</div>
-			<div className='py-10'>
+			<section className='py-10 flex flex-col gap-3 x-sm:gap-4'>
+				<div className='admin-title-container'>
+					<h2 className='admin-h2'>Projects Table</h2>
+					<TooltipWrapper description='Add New Project'>
+						<Button asChild>
+							<Link href='NoNoShouldNotBeOnPage/add'>Add Project</Link>
+						</Button>
+					</TooltipWrapper>
+				</div>
 				<DataTable columns={columns} data={data} />
-			</div>
+			</section>
+			<JobSection />
 		</>
 	);
 }

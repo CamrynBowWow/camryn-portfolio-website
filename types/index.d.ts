@@ -54,3 +54,15 @@ declare type ProjectContent = {
 	createdAt: Date;
 	updatedAt: Date;
 };
+
+declare type Job = {
+	id: string;
+	jobTitle: string;
+	company: string | null;
+	techStack: string;
+	jobDuties: string | null;
+	startedDate: string;
+	endedDate: string | null;
+	createdAt: Date;
+	updatedAt: Date;
+};
