@@ -112,6 +112,17 @@
 	.projects-background-overlay {
 		@apply absolute inset-[5px] rounded bg-background/85 opacity-0 transition-opacity duration-500 group-hover:opacity-100;
 	}
+
+	/* ==== Admin Page */
+
+	.admin-h2 {
+		@apply text-lg sm:text-2xl font-semibold;
+	}
+
+	.admin-title-container {
+		@apply flex gap-3 x-sm:gap-0 flex-col x-sm:flex-row justify-between items-start x-sm:items-center;
+	}
+	/* ==== Admin Page */
 }
 
 @layer base {

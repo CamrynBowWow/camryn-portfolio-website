@@ -13,31 +13,31 @@ import {
 } from '@/components/ui/alert-dialog';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
-import { deleteProject } from '@/server/actions/project';
+import { deleteJob } from '@/server/actions/jobs';
 import { Trash2 } from 'lucide-react';
 
-export default function DeleteDialog({ id }: { id: string }) {
+export default function DeleteJobDialog({ id }: { id: string }) {
 	const { toast } = useToast();
 
 	async function onDelete(id: string) {
-		const data = await deleteProject(id);
+		const data = await deleteJob(id);
 
 		if (data?.error) {
 			toast({
 				variant: 'destructive',
-				title: 'An Error has occurred while deleting the project.',
+				title: 'An Error has occurred while deleting the job.',
 			});
 		} else {
 			toast({
 				variant: 'default',
-				title: 'Project was successfully deleted.',
+				title: 'Job was successfully deleted.',
 			});
 		}
 	}
 
 	return (
 		<AlertDialog>
-			<TooltipWrapper description='Delete Project' delayDuration={200}>
+			<TooltipWrapper description='Delete Job' delayDuration={200}>
 				<AlertDialogTrigger asChild>
 					<Button size='sm' variant='destructive'>
 						<Trash2 />
@@ -45,9 +45,9 @@ export default function DeleteDialog({ id }: { id: string }) {
 				</AlertDialogTrigger>
 			</TooltipWrapper>
 			<AlertDialogContent>
-				<AlertDialogTitle>Delete Project</AlertDialogTitle>
+				<AlertDialogTitle>Delete Job</AlertDialogTitle>
 				<AlertDialogDescription>
-					Are you sure you want to delete this project? This action cannot be undone.
+					Are you sure you want to delete this job? This action cannot be undone.
 				</AlertDialogDescription>
 				<AlertDialogFooter>
 					<AlertDialogCancel>Cancel</AlertDialogCancel>

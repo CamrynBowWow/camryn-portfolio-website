@@ -32,6 +32,15 @@ export default function Header() {
 							About
 						</NavLink>
 					</li>
+					<li>
+						<NavLink
+							href='/jobs'
+							className='p-2 transition-colors text-foreground hover:text-muted-foreground'
+							aria-label='about'
+						>
+							Jobs
+						</NavLink>
+					</li>
 				</ul>
 			</nav>
 		</header>

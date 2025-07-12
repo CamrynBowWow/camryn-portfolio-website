@@ -5,7 +5,6 @@ import {
 	ColumnDef,
 	flexRender,
 	getCoreRowModel,
-	SortingState,
 	VisibilityState,
 	getPaginationRowModel,
 	getSortedRowModel,
@@ -26,16 +25,12 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useState } from 'react';
 
-interface DataTableProps<ProjectContent, TValue> {
-	columns: ColumnDef<ProjectContent, TValue>[];
-	data: ProjectContent[];
+interface DataTableProps<Job, TValue> {
+	columns: ColumnDef<Job, TValue>[];
+	data: Job[];
 }
 
-export function DataTable<ProjectContent, TValue>({
-	columns,
-	data,
-}: DataTableProps<ProjectContent, TValue>) {
-	const [sorting, setSorting] = useState<SortingState>([]);
+export function JobDataTable<Job, TValue>({ columns, data }: DataTableProps<Job, TValue>) {
 	const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
 	const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({
 		id: false,
@@ -46,13 +41,11 @@ export function DataTable<ProjectContent, TValue>({
 		columns,
 		getCoreRowModel: getCoreRowModel(),
 		getPaginationRowModel: getPaginationRowModel(),
-		onSortingChange: setSorting,
 		getSortedRowModel: getSortedRowModel(),
 		onColumnFiltersChange: setColumnFilters,
 		getFilteredRowModel: getFilteredRowModel(),
 		onColumnVisibilityChange: setColumnVisibility,
 		state: {
-			sorting,
 			columnFilters,
 			columnVisibility,
 		},
@@ -62,9 +55,9 @@ export function DataTable<ProjectContent, TValue>({
 		<div>
 			<div className='flex items-center py-4'>
 				<Input
-					placeholder='Filter By Project Name'
-					value={(table.getColumn('name')?.getFilterValue() as string) ?? ''}
-					onChange={(event) => table.getColumn('name')?.setFilterValue(event.target.value)}
+					placeholder='Filter By Job Title'
+					value={(table.getColumn('jobTitle')?.getFilterValue() as string) ?? ''}
+					onChange={(event) => table.getColumn('jobTitle')?.setFilterValue(event.target.value)}
 					className='max-w-sm'
 				/>
 			</div>

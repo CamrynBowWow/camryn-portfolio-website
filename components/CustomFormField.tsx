@@ -142,7 +142,7 @@ function RenderInput({ field, props }: { field: any; props: CustomProps }) {
 								}}
 							/>
 							<label htmlFor='emptyDate' className='form-description-mobile'>
-								If there is no finish date.
+								Check for empty date.
 							</label>
 						</div>
 					)}

@@ -7,7 +7,7 @@ import { ColumnDef } from '@tanstack/react-table';
 import { Edit } from 'lucide-react';
 import { ArrowUpDown } from 'lucide-react';
 import Link from 'next/link';
-import DeleteDialog from './DeleteDialog';
+import DeleteProjectDialog from './DeleteProjectDialog';
 import TooltipWrapper from '@/components/TooltipWrapper';
 
 export const columns: ColumnDef<ProjectContent>[] = [
@@ -83,7 +83,7 @@ export const columns: ColumnDef<ProjectContent>[] = [
 		header: '',
 		cell: ({ row }) => (
 			<div className='flex gap-3 justify-center'>
-				<DeleteDialog id={row.getValue('id')} />
+				<DeleteProjectDialog id={row.getValue('id')} />
 
 				<TooltipWrapper description='Edit Project' delayDuration={200}>
 					<Button size='sm' variant='secondary' asChild>
