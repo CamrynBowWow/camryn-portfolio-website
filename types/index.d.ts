@@ -66,3 +66,12 @@ declare type Job = {
 	createdAt: Date;
 	updatedAt: Date;
 };
+
+declare type JobContent = {
+	jobTitle: string;
+	company: string | null;
+	techStack: string;
+	jobDuties: string | null;
+	startedDate: string;
+	endedDate: string | null;
+};

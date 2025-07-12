@@ -25,12 +25,12 @@ export default function DeleteJobDialog({ id }: { id: string }) {
 		if (data?.error) {
 			toast({
 				variant: 'destructive',
-				title: 'An Error has occurred while deleting the project.',
+				title: 'An Error has occurred while deleting the job.',
 			});
 		} else {
 			toast({
 				variant: 'default',
-				title: 'Project was successfully deleted.',
+				title: 'Job was successfully deleted.',
 			});
 		}
 	}

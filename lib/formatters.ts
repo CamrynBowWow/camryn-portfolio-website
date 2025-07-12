@@ -8,6 +8,11 @@ const timeStampDateFormatter = new Intl.DateTimeFormat(undefined, {
 	hourCycle: 'h23',
 });
 
+const monthYearFormatter = new Intl.DateTimeFormat(undefined, {
+	month: 'long',
+	year: 'numeric',
+});
+
 export function formatDateLong(date: Date) {
 	return longDateFormatter.format(date);
 }
@@ -22,4 +27,8 @@ export function formatDateTimeStamp(date: Date) {
 
 export function formatText(text: string) {
 	return text.replace(/[-_ ]/g, ' ');
+}
+
+export function formatMonthYear(date: Date) {
+	return monthYearFormatter.format(date);
 }
