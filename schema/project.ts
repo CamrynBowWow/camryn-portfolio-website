@@ -26,7 +26,7 @@ export const projectFormSchema = z
 		credit: z.string().optional(),
 		creditLink: z.string().optional(),
 	})
-	.refine((data) => !data.finishDate || data.finishDate >= data.creationDate, {
+	.refine((data) => !data.finishDate || data.finishDate > data.creationDate, {
 		message: 'Finish date cannot be earlier than creation date.',
 		path: ['finishDate'],
 	});

@@ -16,7 +16,7 @@ export const jobFormSchema = z
 			])
 			.optional(),
 	})
-	.refine((data) => !data.endedDate || data.endedDate >= data.startedDate, {
+	.refine((data) => !data.endedDate || data.endedDate > data.startedDate, {
 		message: 'Ended date cannot be earlier than started date.',
 		path: ['finishDate'],
 	});
