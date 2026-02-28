@@ -1,5 +1,6 @@
 import { formatMonthYear } from '@/lib/formatters';
 import { JobContent } from '@/types';
+import parse from 'html-react-parser';
 
 interface JobCardProp {
 	jobData: JobContent;
@@ -16,7 +17,9 @@ export default function JobCard({ jobData }: JobCardProp) {
 			</div>
 
 			<div className='mt-4'>
-				<p className='max-w-4xl text-balance'>{jobData.jobDuties}</p>
+				<p className='!max-w-3xl default-paragraph project-body-features'>
+					{parse(jobData.jobDuties ?? '')}
+				</p>
 				<div className='flex flex-col mt-5 gap-2'>
 					<h2 className='text-base sm:text-lg'>Tech Stack</h2>
 					<ul className='flex flex-wrap text-xs sm:text-sm pl-5 gap-2 md:gap-10 text-neutral-600 list-normal font-medium sm:font-normal flex-col md:flex-row capitalize'>

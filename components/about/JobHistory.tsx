@@ -4,6 +4,8 @@ import JobCard from './JobCard';
 import { desc } from 'drizzle-orm';
 import { JobHistoryTable } from '@/drizzle/schema';
 
+export const dynamic = 'force-dynamic';
+
 export default async function JobHistory() {
 	const data: JobContent[] = await db.query.JobHistoryTable.findMany({
 		orderBy: [desc(JobHistoryTable.startedDate)],
